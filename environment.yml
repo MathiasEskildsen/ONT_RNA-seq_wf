@@ -1,4 +1,4 @@
-name: snakemake_template
+name: <snakemake_template>
 channels:
   - bioconda
   - conda-forge

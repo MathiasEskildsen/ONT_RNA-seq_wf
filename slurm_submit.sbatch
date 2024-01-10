@@ -1,5 +1,5 @@
 #!/usr/bin/bash -l
-#SBATCH --job-name=snakemake_template
+#SBATCH --job-name=<snakemake_template>
 #SBATCH --output=job_%j_%x.out
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -14,7 +14,7 @@
 set -eu
 
 # Activate conda environment with only snakemake
-conda activate snakemake_template
+conda activate <snakemake_template>
 
 # Start workflow using ressources defined in the profile. Snakemake itself 
 # requires nothing, 1CPU + 1G mem is enough
@@ -23,7 +23,7 @@ conda activate snakemake_template
 snakemake --dag | dot -Tsvg > results/dag.svg
 
 # Main workflow
-snakemake --forceall --profile profiles/biocloud
+snakemake --profile profiles/biocloud
 
 # Optionally generate a report once finished
 snakemake --report results/report.html

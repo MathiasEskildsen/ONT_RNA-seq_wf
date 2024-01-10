@@ -1,4 +1,4 @@
-#command with which to start SLURM jobs
+#command with which to submit rules as SLURM jobs
 cluster:
   mkdir -p logs/{rule}/ &&
   sbatch
@@ -31,4 +31,5 @@ rerun-incomplete: True
 scheduler: greedy
 max-status-checks-per-second: 5
 cluster-cancel: scancel
-cluster-status: extras/slurm-status.sh #script to get job status for snakemake
+#script to get job status for snakemake, unfortunately neccessary
+cluster-status: extras/slurm-status.sh
