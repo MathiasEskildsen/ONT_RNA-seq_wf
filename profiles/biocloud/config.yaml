@@ -16,6 +16,7 @@ default-resources:
   - qos="normal"
   - threads=128
   - mem_mb=1024
+  - gpu=0
 #max threads per job/rule. Will take precedence over anything else. Adjust this
 #before submitting to SLURM and leave threads settings elsewhere untouched
 max-threads: 32
