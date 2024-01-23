@@ -14,5 +14,7 @@ rule concatenate_fastq:
   resources:
     mem_mb = 600
   threads: 1
+  log:
+    os.path.join(config["log_dir"], "concatenate_fastq", "{sample}.log")
   shell:
     "cat {input} > {output}"

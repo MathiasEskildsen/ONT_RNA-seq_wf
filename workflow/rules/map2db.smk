@@ -12,6 +12,8 @@ rule map2db:
     db_path = config['db_path']
   conda:
     "../envs/map2db.yml"
+  log:
+    os.path.join(config["log_dir"], "map2db", "{sample}.log")
   shell:
     """
     minimap2 \

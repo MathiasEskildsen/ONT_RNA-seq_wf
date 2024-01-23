@@ -8,6 +8,7 @@ output_dir: "results"
 input_dir: "data/samples/"
 tmp_dir: "tmp"
 db_path: "/databases/midas/MiDAS5.2_20231221/output/FLASVs.fa"
+log_dir: "logs"
 
 # Number of threads to use for individual roles.
 # Not ideal, but threads can be set in multiple places, so the best is to set 
