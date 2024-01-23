@@ -1,4 +1,4 @@
-#command with which to submit rules as SLURM jobs
+#command with which to submit tasks as SLURM jobs
 cluster:
   mkdir -p logs/{rule}/ &&
   sbatch
@@ -21,13 +21,14 @@ default-resources:
 #before submitting to SLURM and leave threads settings elsewhere untouched
 max-threads: 32
 use-conda: True
+use-singularity: False
 conda-frontend: mamba
 printshellcmds: False
 jobs: 50
 local-cores: 1
 latency-wait: 120
-restart-times: 1
-max-jobs-per-second: 10
+restart-times: 1 #restart failed tasks this amount of times
+max-jobs-per-second: 10 #don't touch
 keep-going: True
 rerun-incomplete: True
 scheduler: greedy
