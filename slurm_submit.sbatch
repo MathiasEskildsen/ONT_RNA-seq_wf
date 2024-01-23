@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=1G
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=ksa@bio.aau.dk
+#SBATCH --mail-user=abc@bio.aau.dk
 
 # Exit on first error and if any variables are unset
 set -eu
@@ -19,11 +19,11 @@ conda activate <snakemake_template>
 # Start workflow using ressources defined in the profile. Snakemake itself 
 # requires nothing, 1CPU + 1G mem is enough
 
-# Render a DAG to visualize the workflow
+# Render a DAG to visualize the workflow (optional)
 snakemake --dag | dot -Tsvg > results/dag.svg
 
 # Main workflow
 snakemake --profile profiles/biocloud
 
-# Optionally generate a report once finished
+# Generate a report once finished (optional)
 snakemake --report results/report.html
