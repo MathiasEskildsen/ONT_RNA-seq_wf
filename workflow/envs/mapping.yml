@@ -1,0 +1,7 @@
+name: mapping_cDNA
+channels:
+  - bioconda
+dependencies:
+  - minimap2=2.26
+  - bedtools=2.31.1
+  - samtools=1.19.2
