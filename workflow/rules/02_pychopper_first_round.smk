@@ -9,8 +9,11 @@ rule pychopper_first_round:
         full_length = os.path.join(config['output_pychopper'], "full_length", "{sample}_full_length1_cDNA.fastq")
     threads:
         config['max_threads']
+    resources:
+        mem_mb = 32000,  # 32GB
+        runtime = "02:00:00" # 2 hours
     params:
-        kit = config['pychopper_kit']
+        kit = config['pychopper_kit'] # Library preparation kit used, change in config file
     conda:
         "../envs/trimming.yml"
     log:

@@ -1,29 +1,29 @@
-rule mapping_transcriptome:
+rule mapping_genome:
     input:
-        os.path.join(config["output_mapping"], "genome", "{sample}_genome.fastq")
+        fastq = os.path.join(config["output_pychopper"], "SSP_removed", "{sample}_SSP_removed.fastq"),
+        genome = config["genome_path"]
     output:
         mapped_genome = os.path.join(config["output_mapping"], "genome", "{sample}_genome.sam"),
-        bamtofastq = os.path.join(config["output_mapping"], "genome", "{sample}_genome.fastq")
-    params:
-        genome_path = config["genome_path"]
+        bamtofastq = os.path.join(config["output_mapping"], "remapped", "{sample}_genome.fastq")
     conda:
         "../envs/mapping.yml"
     threads:
          config["max_threads"]
     resources:
-        mem_mb = 10240
+        mem_mb = 20480, # 20GB
+        runtime = "1-00:00:00" # 1 day
     log:
         os.path.join(config["log_dir"], "mapping_genome", "{sample}.log")
     shell:
         """
         minimap2 \
         -ax splice \
-        -p 0.9 \
+        -p 0.99 \
         -k14 \
         --MD \
         -t {threads} \
-        {params.genome_path} \
-        {input} \
+        {input.genome} \
+        {input.fastq} \
         > {output.mapped_genome}
         samtools \
         view -bS \

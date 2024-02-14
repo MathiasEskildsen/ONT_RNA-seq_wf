@@ -8,6 +8,9 @@ rule merge_cDNA_reads:
         os.path.join(config["output_pychopper"], "merged", "{sample}_merged_cDNA.fastq")
     threads:
         1
+    resources:
+        mem_mb = 1024,
+        runtime = "01:00:00" # 1 hour
     shell:
         """
         cat {input.full_length1} {input.full_length2} {input.rescued1} {input.rescued2} > {output}

@@ -12,15 +12,16 @@ configfile: "config/config.yaml"
 # list all subfolders in input_dir
 sample_dirs = os.listdir(config['input_dir'])
 
-include: "rules/concatenate_fastq.smk"
-include: "rules/pychopper_first_round.smk"
-include: "rules/pychopper_second_round.smk"
-include: "rules/merge_cDNA_reads.smk"
-include: "rules/polyA_removal.smk"
-include: "rules/SSP_removal.smk"
-include: "rules/mapping_genome.smk"
-include: "rules/transcript_file.smk"
-
+include: "rules/01_concatenate_fastq.smk"
+include: "rules/02_pychopper_first_round.smk"
+include: "rules/03_pychopper_second_round.smk"
+include: "rules/04_merge_cDNA_reads.smk"
+include: "rules/05_polyA_removal.smk"
+include: "rules/06_SSP_removal.smk"
+include: "rules/07_mapping_genome.smk"
+include: "rules/08_remapping_transcriptome.smk"
+include: "rules/gffread.smk"
+include: "rules/09_gene_abundance_estimation.smk"
 rule all:
   input:
-    expand(os.path.join(config['output_mapping'], "genome", "{sample}_genome.fastq"), sample=sample_dirs)
+    expand(os.path.join(config['output_salmon'], "{sample}", "{sample}_quant.sf"), sample=sample_dirs)

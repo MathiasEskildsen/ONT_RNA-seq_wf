@@ -4,6 +4,12 @@
 output_dir: "results"
 output_pychopper: "results/pychopper"
 output_mapping: "results/mapped"
+output_salmon: "results/salmon"
+
+# Paths to relevant references. Annotation file and genome file
+genome_path: "/home/bio.aau.dk/mk20aj/Projects/Shewanella/data/genome/consensus_canu_racon_2xmedaka.fasta"
+annotation_path: "/home/bio.aau.dk/mk20aj/Projects/Shewanella/bakta/canu_racon_Medaka2x/shewanella.gff3"
+
 # input folder is expected to contain a subfolder for each sampleID/barcode
 # then all fastq files in each subfolder is concatenated and the folder name is 
 # used a sample ID downstream
@@ -11,13 +17,15 @@ input_dir: "data/samples/"
 tmp_dir: "tmp"
 db_path: "/databases/midas/MiDAS5.2_20231221/output/FLASVs.fa"
 log_dir: "logs"
+
 # Library-prep method used. Used for pychopper to determine which primer sequences to look for
 pychopper_kit: "LSK114" # Change depedening on the kit used
+
 # Strand-switchting primer sequence used in the library prep. Used for removal in cutadapt
 SSP_sequence: "TTTCTGTTGGTGCTGATATTGCTGGG"
-# Path to genome index for minimap2
-genome_path: "/home/bio.aau.dk/mk20aj/Projects/Shewanella/data/genome/consensus_canu_racon_2xmedaka.fasta"
-annotation_path: ""
+
+# Library type used for salmon quant
+lib_type: "A" # <-- Salmon auto-detects library-type. Used as a standard. Can be changed. Refer to the docs https://salmon.readthedocs.io/en/latest/salmon.html # What's this LIBTYPE 
 # Number of threads to use for individual roles.
 # Not ideal, but threads can be set in multiple places, so the best is to set 
 # this to a large number and instead adjust the max-threads (per rule) 

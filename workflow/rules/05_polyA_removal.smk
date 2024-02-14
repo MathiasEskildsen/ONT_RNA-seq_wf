@@ -7,6 +7,9 @@ rule polyA_removal:
         "../envs/trimming.yml"
     threads:
         config["max_threads"]
+    resources:
+        mem_mb = 10000, # 10GB
+        runtime = "01:00:00" # 1 hour     
     log:
         os.path.join(config["log_dir"], "polyA_removed", "{sample}.log")
     shell:

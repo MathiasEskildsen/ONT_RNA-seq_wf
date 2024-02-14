@@ -1,20 +1,19 @@
 rule gffread:
     input:
         fasta=config["genome_path"],
-        annotation="annotation.gtf",
-        # ids="",  # Optional path to records to keep
-        # nids="",  # Optional path to records to drop
-        # seq_info="",  # Optional path to sequence information
-        # sort_by="",  # Optional path to the ordered list of reference sequences
-        # attr="",  # Optional annotation attributes to keep.
-        # chr_replace="",  # Optional path to <original_ref_ID> <new_ref_ID>
+        annotation=config["annotation_path"]
     output:
-        records="transcripts.fa",
-        # dupinfo="",  # Optional path to clustering/merging information
-    threads: 1
+        os.path.join(config["output_dir"], "transcripts", "transcripts.fa")
+    threads:
+        1
+    resources:
+        mem_mb = 1024, # 1GB
+        runtime = "01:00:00"
+    conda:
+        "../envs/gffread.yml"
     log:
-        "logs/gffread.log",
-    params:
-        extra="",
-    wrapper:
-        "v3.3.6/bio/gffread"
+        os.path.join(config["log_dir"], "gffread", "transcripts_fasta.log")
+    shell:
+        """
+        gffread {input.annotation} -g {input.fasta} -w {output}
+    """
