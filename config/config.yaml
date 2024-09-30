@@ -1,22 +1,26 @@
 # This file is for various variables used throughout the workflow.
 # Everything else regarding how things are run should go in the profile config
+include_rRNA_depletion: false
 
-output_dir: "results"
-output_pychopper: "results/pychopper"
-output_mapping: "results/mapped"
-output_salmon: "results/salmon"
+# Output directory for the workflow.
+output_dir: "Shewanella_algae_project"
 
-# Paths to relevant references. Annotation file and genome file
+# Paths to relevant references. Annotation file and genome file (optional rRNA database)
 genome_path: "/home/bio.aau.dk/mk20aj/Projects/Shewanella/data/genome/consensus_canu_racon_2xmedaka.fasta"
 annotation_path: "/home/bio.aau.dk/mk20aj/Projects/Shewanella/bakta/canu_racon_Medaka2x/shewanella.gff3"
+rRNA_db: "/databases/SILVA/138.1/SILVA_138.1_SSURef_NR99_tax_silva_trunc.sintax.fasta"
+# Configurations for the DESeq2 workflow
+# Sample table for DESeq2 workflow (description of samples, conditions, etc. names should match the name of the folders in the input_dir or filenames in the input_dir) 
+metadata: "/home/bio.aau.dk/mk20aj/Projects/snakemake_ONT_cDNA/data/metadata/sample_table_shewa.csv" 
+padj_cutoff: 0.1
+log2fc_cutoff: 0.585
 
 # input folder is expected to contain a subfolder for each sampleID/barcode
 # then all fastq files in each subfolder is concatenated and the folder name is 
 # used a sample ID downstream
-input_dir: "data/samples/"
-tmp_dir: "tmp"
-db_path: "/databases/midas/MiDAS5.2_20231221/output/FLASVs.fa"
-log_dir: "logs"
+input_dir: "/home/bio.aau.dk/mk20aj/Projects/Shewanella/data/FASTQ/DCS_20042023"
+tmp_dir: "tmp_shewanella"
+log_dir: "logs_shewanella"
 
 # Library-prep method used. Used for pychopper to determine which primer sequences to look for
 pychopper_kit: "LSK114" # Change depedening on the kit used
@@ -30,4 +34,4 @@ lib_type: "A" # <-- Salmon auto-detects library-type. Used as a standard. Can be
 # Not ideal, but threads can be set in multiple places, so the best is to set 
 # this to a large number and instead adjust the max-threads (per rule) 
 # in the profile config.yaml to suit your particular computing setup.
-max_threads: 128
+max_threads: 32
