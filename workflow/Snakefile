@@ -29,8 +29,16 @@ include: "rules/capture_config.smk"
 include: "rules/common.smk"
 include: "rules/statistics.smk"
 
+# Validate the configuration values
+validate_boolean_config(config["include_pychopper"], "include_pychopper")
+
+# Assign the configuration values to variables
+include_pychopper = config["include_pychopper"]
+
+# Function to generate output files for "rule all" are defined in the common.smk file
 rule all:
   input:
+    #prepare_inputs()
     expand(os.path.join(config['output_dir'], "quantification", "{sample}", "{sample}.quant"), sample=get_samples()), # <-- Quantification output from oarfish
     expand(os.path.join(config['output_dir'], "pychopper", "{sample}", "{sample}_SSP_removed.fastq"), sample=get_samples()), # <-- SSP removal (last step of the filtering/trimming)
     expand(os.path.join(config['output_dir'], "reports", "read_count_overview.tsv")), # <-- Overview of read counts for all samples before and after pychopper
