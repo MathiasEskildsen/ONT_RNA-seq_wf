@@ -1,22 +1,30 @@
-import glob
-import os
-
-# helper function to list all fastq files per wildcard (subfolder/sample) 
-def listFastq(wildcards):
-  fastqs = glob.glob(os.path.join(config['input_dir'], wildcards.sample, "*.fastq.gz"))
-  return fastqs
-
+include: "common.smk"
 rule concatenate_fastq:
-  input:
-    listFastq
-  output:
-    temp(os.path.join(config['tmp_dir'], "samples", "{sample}_concat.fastq.gz"))
-  resources:
-    mem_mb = 512,
-    runtime = "01:00:00" # 1 hour
-  threads:
-    1
-  log:
-    os.path.join(config["log_dir"], "concatenate_fastq", "{sample}.log")
-  shell:
-    "cat {input} > {output}"
+    input:
+        lambda wildcards: listFastq(wildcards) # List fastq files - helper function located in common.smk
+    output:
+        concat = temp(os.path.join(config['tmp_dir'], "samples", "{sample}_concat.fastq")),
+        total_reads = temp(os.path.join(config['tmp_dir'], "read_counts", "{sample}", "{sample}_total_reads_prefilt.tsv"))
+    resources:
+        mem_mb = 512,
+        runtime = 60
+    threads: 1
+    log:
+        os.path.join(config["log_dir"], "concatenate_fastq", "{sample}.log")
+    shell:
+        """
+        # Check if input files are compressed
+        for file in {input}; do
+            if gzip -t $file 2>/dev/null; then
+                echo "Decompressing $file"
+                zcat $file >> {output.concat}
+            else
+                echo "Copying $file"
+                cat $file >> {output.concat}
+            fi
+        done
+        # Count total reads
+        num_reads=$(($(wc -l < "{output.concat}") / 4))
+        # Put into a temporary file
+        echo -e "Sample\tReads_Pre_Filtering\n{wildcards.sample}\t$num_reads" > {output.total_reads}
+        """

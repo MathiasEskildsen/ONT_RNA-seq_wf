@@ -1,7 +1,9 @@
 name: trimming
 channels:
   - bioconda
+  - conda-forge
+  - nanoporetech
 dependencies:
-  - pychopper=2.5.0
+  - pychopper=2.7.9
   - cutadapt=4.6
   - samclip=0.4.0

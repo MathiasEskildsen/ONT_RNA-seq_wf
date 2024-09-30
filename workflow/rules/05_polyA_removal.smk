@@ -1,15 +1,16 @@
 rule polyA_removal:
     input:
-        os.path.join(config["output_pychopper"], "merged", "{sample}_merged_cDNA.fastq")
+        os.path.join(config['output_dir'], "pychopper", "merged_full_length_cDNA", "{sample}_merged_cDNA.fastq")
     output:
-        os.path.join(config["output_pychopper"], "polyA_removed", "{sample}_polyA_removed.fastq")
+        polyA = os.path.join(config['output_dir'], "pychopper", "polyA_removed", "{sample}_polyA_removed.fastq"),
+        total_reads = temp(os.path.join(config['tmp_dir'], "read_counts", "{sample}", "{sample}_total_reads_polyA.tsv"))
     conda:
         "../envs/trimming.yml"
     threads:
         config["max_threads"]
     resources:
-        mem_mb = 10000, # 10GB
-        runtime = "01:00:00" # 1 hour     
+        mem_mb = 10240, # 10GB
+        runtime = 60     
     log:
         os.path.join(config["log_dir"], "polyA_removed", "{sample}.log")
     shell:
@@ -18,6 +19,10 @@ rule polyA_removal:
         -a "A{{10}}" \
         -e 1 \
         -j {threads} \
-        -o {output} \
+        -o {output.polyA} \
         {input}
+        # Count total reads
+        num_reads=$(($(wc -l < "{output.polyA}") / 4))
+        # Put into a temporary file
+        echo -e "Sample\tReads_Post_PolyA\n{wildcards.sample}\t$num_reads" > {output.total_reads}
         """

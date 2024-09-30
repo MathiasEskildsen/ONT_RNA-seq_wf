@@ -1,5 +1,5 @@
-name: gffread
+name: statistics
 channels:
   - bioconda
 dependencies:
-  - gffread=0.12.7
+  - nanoplot=1.42.0

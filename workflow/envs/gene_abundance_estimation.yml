@@ -2,4 +2,4 @@ name: gene_abundance_estimation
 channels:
   - bioconda
 dependencies:
-  - salmon=1.10.2-0
+  - oarfish
