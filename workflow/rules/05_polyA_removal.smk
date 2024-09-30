@@ -1,6 +1,11 @@
 rule polyA_removal:
     input:
-        os.path.join(config['output_dir'], "pychopper", "merged_full_length_cDNA", "{sample}_merged_cDNA.fastq")
+        lambda wildcards: os.path.join(
+            config['output_dir'], 
+            "pychopper" if config["include_pychopper"] else "samples",
+            "merged_full_length_cDNA" if config["include_pychopper"] else "",
+            "{sample}_merged_cDNA.fastq" if config["include_pychopper"] else "{sample}_concat.fastq"
+        )
     output:
         polyA = os.path.join(config['output_dir'], "pychopper", "polyA_removed", "{sample}_polyA_removed.fastq"),
         total_reads = temp(os.path.join(config['tmp_dir'], "read_counts", "{sample}", "{sample}_total_reads_polyA.tsv"))

@@ -6,7 +6,7 @@ output_dir: "results"
 
 # Paths to relevant references. Annotation file and genome file (optional rRNA database)
 genome_path: "data/references/genomic.fasta"
-annotation_path: "data/references/annotation.gff3"
+annotation_path: "data/references/annotation.gff"
 # Configurations for the DESeq2 workflow
 # Sample table for DESeq2 workflow (description of samples, conditions, etc. names should match the name of the folders in the input_dir or filenames in the input_dir) 
 metadata: "data/metadata/sample_table_test1.csv" 
@@ -36,4 +36,4 @@ max_threads: 32
 # If set to false the workflow will use the raw reads and not identified full-length cDNA
 # This can be useful if you are working with a different library prep method, especially since
 # Pychopper is not very not working properly at the moment with direct cDNA LSK114 libraries
-include_pychopper: True
+include_pychopper: False

@@ -1,9 +1,10 @@
 include: "common.smk"
+
 rule concatenate_fastq:
     input:
-        lambda wildcards: listFastq(wildcards) # List fastq files - helper function located in common.smk
+        lambda wildcards: listFastq(wildcards)
     output:
-        concat = temp(os.path.join(config['tmp_dir'], "samples", "{sample}_concat.fastq")),
+        concat = temp(os.path.join(config['output_dir'], "samples", "{sample}_concat.fastq")),
         total_reads = temp(os.path.join(config['tmp_dir'], "read_counts", "{sample}", "{sample}_total_reads_prefilt.tsv"))
     resources:
         mem_mb = 512,

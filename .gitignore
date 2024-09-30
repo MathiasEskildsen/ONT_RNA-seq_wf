@@ -5,3 +5,5 @@ logs/**
 .snakemake/**
 data/**
 tmp/**
+data/samples/**
+data/reference/**

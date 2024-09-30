@@ -22,7 +22,6 @@ include: "rules/07_mapping_genome.smk"
 include: "rules/08_remapping_transcriptome.smk"
 include: "rules/gffread.smk"
 include: "rules/09_gene_abundance_estimation.smk"
-include: "rules/extra_rRNA_depletion.smk" ## <- Make optional
 include: "rules/10_DESeq2.smk"
 include: "rules/11_geneID_product_match.smk"
 include: "rules/capture_config.smk"
@@ -38,19 +37,4 @@ include_pychopper = config["include_pychopper"]
 # Function to generate output files for "rule all" are defined in the common.smk file
 rule all:
   input:
-    #prepare_inputs()
-    expand(os.path.join(config['output_dir'], "quantification", "{sample}", "{sample}.quant"), sample=get_samples()), # <-- Quantification output from oarfish
-    expand(os.path.join(config['output_dir'], "pychopper", "{sample}", "{sample}_SSP_removed.fastq"), sample=get_samples()), # <-- SSP removal (last step of the filtering/trimming)
-    expand(os.path.join(config['output_dir'], "reports", "read_count_overview.tsv")), # <-- Overview of read counts for all samples before and after pychopper
-    expand(os.path.join(config['output_dir'], "DESeq2", "{sample}", "{sample}_tpms.quant"), sample=get_samples()), # <-- TPMs for DESeq2
-    expand(os.path.join(config['output_dir'], "DESeq2", "data", "DESeq2_results.tsv")), # <-- Count data for DESeq2
-    expand(os.path.join(config['output_dir'], "DESeq2", "figs", "PCA-plot.png")), # <-- PCA plot 
-    expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_all_w_contrast.tsv")),
-    expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_filtered_w_contrast.tsv")),
-    expand(os.path.join(config['output_dir'], "DESeq2", "figs", "volcano_plot.png")), # <-- volcano plot
-    expand(os.path.join(config['output_dir'], "DESeq2", "figs", "volcano_plot_labels.png")), # <-- volcano plot w. labels
-    expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_filtered_w_contrast_product.tsv")), # <-- update differential expression results with product match
-    expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_all_w_contrast_product.tsv")), # <-- update differential expression results with product match
-    expand(os.path.join(config['output_dir'], "reports", "config.txt")),
-    expand(os.path.join(config['output_dir'], "statistics_raw", "{sample}", "{sample}_NanoStats.txt"), sample=get_samples()),
-    expand(os.path.join(config['output_dir'], "statistics_pychopper", "{sample}", "{sample}_NanoStats.txt"), sample=get_samples()),
+    prepare_inputs()

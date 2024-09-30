@@ -1,13 +1,10 @@
 rule NanoPlot:
     input:
-        fastqs_raw = os.path.join(config['tmp_dir'], "samples", "{sample}_concat.fastq"),
+        fastqs_raw = os.path.join(config['output_dir'], "samples", "{sample}_concat.fastq"),
         fastqs_pychopper = os.path.join(config['output_dir'], "pychopper", "merged_full_length_cDNA", "{sample}_merged_cDNA.fastq")
     output:
         raw = os.path.join(config['output_dir'], "statistics_raw", "{sample}", "{sample}_NanoStats.txt"),
         pychopper = os.path.join(config['output_dir'], "statistics_pychopper", "{sample}", "{sample}_NanoStats.txt")
-    params:
-        param1 = "value1",
-        param2 = "value2"
     threads:
         config['max_threads']
     resources:

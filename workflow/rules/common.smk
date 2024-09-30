@@ -67,7 +67,7 @@ def prepare_inputs():
         inputs.extend(expand(os.path.join(config['output_dir'], "reports", "config.txt")))
         inputs.extend(expand(os.path.join(config['output_dir'], "statistics_raw", "{sample}", "{sample}_NanoStats.txt"), sample=get_samples()))
         inputs.extend(expand(os.path.join(config['output_dir'], "statistics_pychopper", "{sample}", "{sample}_NanoStats.txt"), sample=get_samples()))
-else
+    else:
         inputs.extend(expand(os.path.join(config['output_dir'], "quantification", "{sample}", "{sample}.quant"), sample=get_samples()))
         inputs.extend(expand(os.path.join(config['output_dir'], "reports", "read_count_overview.tsv")))
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "{sample}", "{sample}_tpms.quant"), sample=get_samples()))
