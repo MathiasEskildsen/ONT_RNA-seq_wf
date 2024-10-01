@@ -19,7 +19,7 @@ here(snakemake@params[["tpm_path"]])
 sample_table <- read.csv2(snakemake@input[["sample_table"]])
 colnames(sample_table)[1] <- "sample.name"
 files <- pull(sample_table, sample.name)
-sample_files <- paste0(here(),"/", "Shewanella_algae_project", "/", "DESeq2", "/", files, "/", (files), "_tpms.quant")
+sample_files <- paste0(here(),"/", "results", "/", "DESeq2", "/", files, "/", (files), "_tpms.quant")
 
 names(sample_files) = pull(sample_table, sample.name)
 head(sample_files)

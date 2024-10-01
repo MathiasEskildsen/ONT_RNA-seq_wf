@@ -36,4 +36,4 @@ max_threads: 32
 # If set to false the workflow will use the raw reads and not identified full-length cDNA
 # This can be useful if you are working with a different library prep method, especially since
 # Pychopper is not very not working properly at the moment with direct cDNA LSK114 libraries
-include_pychopper: False
+include_pychopper: True

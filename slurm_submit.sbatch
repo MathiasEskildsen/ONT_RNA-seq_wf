@@ -1,12 +1,12 @@
 #!/usr/bin/bash -l
-#SBATCH --job-name=quant_rRNA_depleted_ISEG
+#SBATCH --job-name=quant_Madhuni_Pychopper_enabled
 #SBATCH --output=/home/bio.aau.dk/mk20aj/joblog/job_%j_%x.out
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --partition=default-op
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=2G
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=4G
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=mhes@bio.aau.dk
 #SBATCH --time 2-00:00:00
