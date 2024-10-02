@@ -17,7 +17,6 @@ rule quantification:
         oarfish \
         -a {input} \
         -o {output} \
-        --allow-negative-strand \
         --threads {threads} \
         --num-bootstraps 1000 \
         #Rename the output file to match expected output

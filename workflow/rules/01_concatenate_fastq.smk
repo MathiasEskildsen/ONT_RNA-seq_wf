@@ -9,6 +9,8 @@ rule concatenate_fastq:
     resources:
         mem_mb = 512,
         runtime = 60
+    conda:
+        "../envs/generic.yml"
     threads: 1
     log:
         os.path.join(config["log_dir"], "concatenate_fastq", "{sample}.log")

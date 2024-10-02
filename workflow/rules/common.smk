@@ -65,8 +65,6 @@ def prepare_inputs():
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_filtered_w_contrast_product.tsv")))
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_all_w_contrast_product.tsv")))
         inputs.extend(expand(os.path.join(config['output_dir'], "reports", "config.txt")))
-        inputs.extend(expand(os.path.join(config['output_dir'], "statistics_raw", "{sample}", "{sample}_NanoStats.txt"), sample=get_samples()))
-        inputs.extend(expand(os.path.join(config['output_dir'], "statistics_pychopper", "{sample}", "{sample}_NanoStats.txt"), sample=get_samples()))
     else:
         inputs.extend(expand(os.path.join(config['output_dir'], "quantification", "{sample}", "{sample}.quant"), sample=get_samples()))
         inputs.extend(expand(os.path.join(config['output_dir'], "reports", "read_count_overview.tsv")))
@@ -80,5 +78,4 @@ def prepare_inputs():
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_filtered_w_contrast_product.tsv")))
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_all_w_contrast_product.tsv")))
         inputs.extend(expand(os.path.join(config['output_dir'], "reports", "config.txt")))
-        inputs.extend(expand(os.path.join(config['output_dir'], "statistics_raw", "{sample}", "{sample}_NanoStats.txt"), sample=get_samples()))
     return inputs
