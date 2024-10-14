@@ -18,7 +18,7 @@ def listFastq(wildcards):
             # If there are subdirectories, use them as wildcards.sample
             for subdir in subdirs:
                 if wildcards.sample in subdir:
-                    fastqs = glob.glob(os.path.join(sample_path, subdir, "*.f*q*"))
+                    fastqs = glob.glob(os.path.join(sample_path, subdir, "*.fastq*"))
         else:
             # If there are no subdirectories, use filenames as wildcards.sample
             files = [f for f in os.listdir(sample_path) if os.path.isfile(os.path.join(sample_path, f))]

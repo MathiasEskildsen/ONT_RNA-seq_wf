@@ -1,0 +1,14 @@
+sample.name;source_name;treatment;sample_type
+barcode04;Control;Control;N/A
+barcode05;Control;Control;N/A
+barcode06;Control;Control;N/A
+barcode07;Control;Control;N/A
+barcode08;50mM;Treatment;N/A
+barcode09;50mM;Treatment;N/A
+barcode10;50mM;Treatment;N/A
+barcode11;50mM;Treatment;N/A
+barcode12;100mM;Treatment;N/A
+barcode13;100mM;Treatment;N/A
+barcode14;100mM;Treatment;N/A
+barcode15;100mM;Treatment;N/A
+

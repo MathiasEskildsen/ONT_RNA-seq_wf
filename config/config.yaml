@@ -5,18 +5,18 @@
 output_dir: "results"
 
 # Paths to relevant references. Annotation file and genome file (optional rRNA database)
-genome_path: "data/references/genomic.fasta"
-annotation_path: "data/references/annotation.gff"
+genome_path: ".test/references/genomic.fasta"
+annotation_path: ".test/references/annotation.gff"
 # Configurations for the DESeq2 workflow
 # Sample table for DESeq2 workflow (description of samples, conditions, etc. names should match the name of the folders in the input_dir or filenames in the input_dir) 
-metadata: "data/metadata/sample_table_test1.csv" 
+metadata: ".test/metadata/sample_table.csv" 
 padj_cutoff: 0.05
 log2fc_cutoff: 0.585
 
 # input folder is expected to contain a subfolder for each sampleID/barcode
 # then all fastq files in each subfolder is concatenated and the folder name is 
 # used a sample ID downstream
-input_dir: "data/samples"
+input_dir: ".test/data"
 tmp_dir: "tmp"
 log_dir: "logs"
 

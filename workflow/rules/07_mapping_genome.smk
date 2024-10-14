@@ -12,7 +12,7 @@ rule mapping_genome:
     threads:
          config["max_threads"]
     resources:
-        mem_mb = 20480, # 20GB
+        mem_mb = 32768, # 32GB
         runtime = 1440  # 1 day
     log:
         os.path.join(config["log_dir"], "mapping_genome", "{sample}.log")
