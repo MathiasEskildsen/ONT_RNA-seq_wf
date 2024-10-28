@@ -55,7 +55,6 @@ def prepare_inputs():
         inputs.extend(expand(os.path.join(config['output_dir'], "pychopper", "{sample}", "{sample}_SSP_removed.fastq"), sample=get_samples()))
         inputs.extend(expand(os.path.join(config['output_dir'], "quantification", "{sample}", "{sample}.quant"), sample=get_samples()))
         inputs.extend(expand(os.path.join(config['output_dir'], "reports", "read_count_overview.tsv")))
-        inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "{sample}", "{sample}_tpms.quant"), sample=get_samples()))
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DESeq2_results.tsv")))
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "figs", "PCA-plot.png")))
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_all_w_contrast.tsv")))
@@ -68,7 +67,6 @@ def prepare_inputs():
     else:
         inputs.extend(expand(os.path.join(config['output_dir'], "quantification", "{sample}", "{sample}.quant"), sample=get_samples()))
         inputs.extend(expand(os.path.join(config['output_dir'], "reports", "read_count_overview.tsv")))
-        inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "{sample}", "{sample}_tpms.quant"), sample=get_samples()))
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DESeq2_results.tsv")))
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "figs", "PCA-plot.png")))
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_all_w_contrast.tsv")))

@@ -3,7 +3,7 @@ log <- file(snakemake@log[[1]], open = "wt")
 sink(log)
 sink(log, type="message")
 # List packages required for the analysis
-packages <- c("ggplot2", "readr", "dplyr", "tidyr", "reshape2", "tximport", "tximportData", "DESeq2", "tidyverse", "scales", "here", "BiocGenerics", "ggrepel")
+packages <- c("ggplot2", "readr", "dplyr", "tidyr", "reshape2", "tximport", "tximportData", "DESeq2", "tidyverse", "scales", "BiocGenerics", "ggrepel")
 # Check if packages are not installed, if not, then install them
 installed_packages <- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) {
@@ -12,31 +12,28 @@ if (any(installed_packages == FALSE)) {
 # Load the required libraries
 invisible(lapply(packages, library, character.only = TRUE))
 
-# Load the quantification data with calculated tpms from Oarfish into R
-input_files <- snakemake@input[["quant"]]
-# Load the sample table into R FUCK DIG SELV MAND
-here(snakemake@params[["tpm_path"]])
+# Load the sample table into R
 sample_table <- read.csv2(snakemake@input[["sample_table"]])
 colnames(sample_table)[1] <- "sample.name"
-files <- pull(sample_table, sample.name)
-sample_files <- paste0(here(),"/", "results", "/", "DESeq2", "/", files, "/", (files), "_tpms.quant")
 
-names(sample_files) = pull(sample_table, sample.name)
+#Set the working directory using snakemake config
+output_dir <- snakemake@config[["output_dir"]]
+setwd(output_dir)
+
+# Pull the sample names from the sample table
+files <- pull(sample_table, sample.name)
+
+# Construct the sample file paths, using the sample table
+sample_files <- paste0(output_dir, "/quantification", files, "/", (files), ".quant")
+
+names(sample_files) <- pull(sample_table, sample.name)
 head(sample_files)
 
 # Tximport the data
 count_data <- tximport(files = sample_files,
-                       type = "none",
-                       importer = read_tsv,
-                       geneIdCol = "tname",
-                       countsFromAbundance = "no",
-                       abundanceCol = "TPM",
+                       type = "oarfish",
                        txIn = TRUE,
-                       txIdCol = "tname",
-                       countsCol = "num_reads",
-                       lengthCol = "len",
-                       txOut = TRUE,
-                       ignoreTxVersion = TRUE)
+                       txOut = TRUE)
 # DESeq2 normalization and dataframe creation
 sample_table <- as.data.frame(sample_table)
 colnames(sample_table)[1] <- "sample"
@@ -44,7 +41,6 @@ colnames(sample_table)[3] <- "condition"
 deseq_df <- DESeqDataSetFromTximport(txi = count_data,
                                      colData = sample_table,
                                      design =~condition)
-
 # Setting control as reference level
 deseq_df$condition <- relevel(deseq_df$condition, ref = "Control")
 # Run DESeq2 normalization

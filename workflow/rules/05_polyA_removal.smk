@@ -15,7 +15,7 @@ rule polyA_removal:
         config["max_threads"]
     resources:
         mem_mb = 10240, # 10GB
-        runtime = 60     
+        runtime = 60
     log:
         os.path.join(config["log_dir"], "polyA_removed", "{sample}.log")
     shell:

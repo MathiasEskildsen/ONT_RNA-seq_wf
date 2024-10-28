@@ -1,0 +1,2177 @@
+Multiple includes of /home/bio.aau.dk/mk20aj/Projects/ONT_RNA-seq_wf/workflow/rules/common.smk ignored
+Building DAG of jobs...
+Job stats:
+job                       count    min threads    max threads
+----------------------  -------  -------------  -------------
+DESEq2                        1              1              1
+SSP_removal                  24              1              1
+all                           1              1              1
+concatenate_fastq            24              1              1
+geneID_product_match          1              1              1
+mapping_genome               12              1              1
+mapping_transcriptome        12              1              1
+merge_cDNA_reads             24              1              1
+merge_read_count              1              1              1
+polyA_removal                24              1              1
+pychopper_first_round        24              1              1
+pychopper_second_round       24              1              1
+quantification               12              1              1
+total                       184              1              1
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode10.fastq
+    output: tmp/samples/barcode10_concat.fastq, tmp/read_counts/barcode10/barcode10_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode10.log
+    jobid: 59
+    reason: Missing output files: tmp/samples/barcode10_concat.fastq
+    wildcards: sample=barcode10
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode05.fastq_concat.fastq, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode05.fastq.log
+    jobid: 117
+    reason: Missing output files: tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_prefilt.tsv, tmp/samples/barcode05.fastq_concat.fastq
+    wildcards: sample=barcode05.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode14.fastq
+    output: tmp/samples/barcode14_concat.fastq, tmp/read_counts/barcode14/barcode14_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode14.log
+    jobid: 71
+    reason: Missing output files: tmp/samples/barcode14_concat.fastq
+    wildcards: sample=barcode14
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode15.fastq_concat.fastq, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode15.fastq.log
+    jobid: 118
+    reason: Missing output files: tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_prefilt.tsv, tmp/samples/barcode15.fastq_concat.fastq
+    wildcards: sample=barcode15.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode11.fastq_concat.fastq, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode11.fastq.log
+    jobid: 111
+    reason: Missing output files: tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_prefilt.tsv, tmp/samples/barcode11.fastq_concat.fastq
+    wildcards: sample=barcode11.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode11.fastq
+    output: tmp/samples/barcode11_concat.fastq, tmp/read_counts/barcode11/barcode11_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode11.log
+    jobid: 5
+    reason: Missing output files: tmp/samples/barcode11_concat.fastq
+    wildcards: sample=barcode11
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode04.fastq_concat.fastq, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode04.fastq.log
+    jobid: 119
+    reason: Missing output files: tmp/samples/barcode04.fastq_concat.fastq, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_prefilt.tsv
+    wildcards: sample=barcode04.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode12.fastq
+    output: tmp/samples/barcode12_concat.fastq, tmp/read_counts/barcode12/barcode12_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode12.log
+    jobid: 17
+    reason: Missing output files: tmp/samples/barcode12_concat.fastq
+    wildcards: sample=barcode12
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode09.fastq_concat.fastq, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode09.fastq.log
+    jobid: 112
+    reason: Missing output files: tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_prefilt.tsv, tmp/samples/barcode09.fastq_concat.fastq
+    wildcards: sample=barcode09.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode07.fastq
+    output: tmp/samples/barcode07_concat.fastq, tmp/read_counts/barcode07/barcode07_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode07.log
+    jobid: 29
+    reason: Missing output files: tmp/samples/barcode07_concat.fastq
+    wildcards: sample=barcode07
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode10.fastq_concat.fastq, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode10.fastq.log
+    jobid: 120
+    reason: Missing output files: tmp/samples/barcode10.fastq_concat.fastq, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_prefilt.tsv
+    wildcards: sample=barcode10.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode05.fastq
+    output: tmp/samples/barcode05_concat.fastq, tmp/read_counts/barcode05/barcode05_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode05.log
+    jobid: 41
+    reason: Missing output files: tmp/samples/barcode05_concat.fastq
+    wildcards: sample=barcode05
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode12.fastq_concat.fastq, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode12.fastq.log
+    jobid: 113
+    reason: Missing output files: tmp/samples/barcode12.fastq_concat.fastq, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_prefilt.tsv
+    wildcards: sample=barcode12.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode04.fastq
+    output: tmp/samples/barcode04_concat.fastq, tmp/read_counts/barcode04/barcode04_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode04.log
+    jobid: 53
+    reason: Missing output files: tmp/samples/barcode04_concat.fastq
+    wildcards: sample=barcode04
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode06.fastq_concat.fastq, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode06.fastq.log
+    jobid: 121
+    reason: Missing output files: tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_prefilt.tsv, tmp/samples/barcode06.fastq_concat.fastq
+    wildcards: sample=barcode06.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode06.fastq
+    output: tmp/samples/barcode06_concat.fastq, tmp/read_counts/barcode06/barcode06_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode06.log
+    jobid: 65
+    reason: Missing output files: tmp/samples/barcode06_concat.fastq
+    wildcards: sample=barcode06
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode13.fastq_concat.fastq, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode13.fastq.log
+    jobid: 114
+    reason: Missing output files: tmp/samples/barcode13.fastq_concat.fastq, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_prefilt.tsv
+    wildcards: sample=barcode13.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode14.fastq_concat.fastq, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode14.fastq.log
+    jobid: 122
+    reason: Missing output files: tmp/samples/barcode14.fastq_concat.fastq, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_prefilt.tsv
+    wildcards: sample=barcode14.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode07.fastq_concat.fastq, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode07.fastq.log
+    jobid: 115
+    reason: Missing output files: tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_prefilt.tsv, tmp/samples/barcode07.fastq_concat.fastq
+    wildcards: sample=barcode07.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode09.fastq
+    output: tmp/samples/barcode09_concat.fastq, tmp/read_counts/barcode09/barcode09_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode09.log
+    jobid: 11
+    reason: Missing output files: tmp/samples/barcode09_concat.fastq
+    wildcards: sample=barcode09
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode13.fastq
+    output: tmp/samples/barcode13_concat.fastq, tmp/read_counts/barcode13/barcode13_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode13.log
+    jobid: 23
+    reason: Missing output files: tmp/samples/barcode13_concat.fastq
+    wildcards: sample=barcode13
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode08.fastq
+    output: tmp/samples/barcode08_concat.fastq, tmp/read_counts/barcode08/barcode08_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode08.log
+    jobid: 35
+    reason: Missing output files: tmp/samples/barcode08_concat.fastq
+    wildcards: sample=barcode08
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    output: tmp/samples/barcode08.fastq_concat.fastq, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode08.fastq.log
+    jobid: 116
+    reason: Missing output files: tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_prefilt.tsv, tmp/samples/barcode08.fastq_concat.fastq
+    wildcards: sample=barcode08.fastq
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule concatenate_fastq:
+    input: .test/data/barcode15.fastq
+    output: tmp/samples/barcode15_concat.fastq, tmp/read_counts/barcode15/barcode15_total_reads_prefilt.tsv
+    log: logs/concatenate_fastq/barcode15.log
+    jobid: 47
+    reason: Missing output files: tmp/samples/barcode15_concat.fastq
+    wildcards: sample=barcode15
+    resources: tmpdir=/tmp, mem_mb=512, runtime=60
+
+Would remove temporary output tmp/read_counts/barcode10/barcode10_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode14/barcode14_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode11/barcode11_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode12/barcode12_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode07/barcode07_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode05/barcode05_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode04/barcode04_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode06/barcode06_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode09/barcode09_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode13/barcode13_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode08/barcode08_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode15/barcode15_total_reads_prefilt.tsv
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode08_concat.fastq
+    output: results/pychopper/reports/barcode08_pychopper1_report.pdf, results/pychopper/unclassified/barcode08_unclassified.fastq, results/pychopper/rescued/barcode08_rescued1.fastq, results/pychopper/reports/barcode08_pychopper_stats.txt, results/pychopper/full_length/barcode08_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode08.log
+    jobid: 34
+    reason: Input files updated by another job: tmp/samples/barcode08_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode08
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode05.fastq_concat.fastq
+    output: results/pychopper/reports/barcode05.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode05.fastq_unclassified.fastq, results/pychopper/rescued/barcode05.fastq_rescued1.fastq, results/pychopper/reports/barcode05.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode05.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode05.fastq.log
+    jobid: 142
+    reason: Missing output files: results/pychopper/full_length/barcode05.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode05.fastq_rescued1.fastq, results/pychopper/unclassified/barcode05.fastq_unclassified.fastq; Input files updated by another job: tmp/samples/barcode05.fastq_concat.fastq
+    wildcards: sample=barcode05.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode10.fastq_concat.fastq
+    output: results/pychopper/reports/barcode10.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode10.fastq_unclassified.fastq, results/pychopper/rescued/barcode10.fastq_rescued1.fastq, results/pychopper/reports/barcode10.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode10.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode10.fastq.log
+    jobid: 151
+    reason: Missing output files: results/pychopper/unclassified/barcode10.fastq_unclassified.fastq, results/pychopper/rescued/barcode10.fastq_rescued1.fastq, results/pychopper/full_length/barcode10.fastq_full_length1_cDNA.fastq; Input files updated by another job: tmp/samples/barcode10.fastq_concat.fastq
+    wildcards: sample=barcode10.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode11.fastq_concat.fastq
+    output: results/pychopper/reports/barcode11.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode11.fastq_unclassified.fastq, results/pychopper/rescued/barcode11.fastq_rescued1.fastq, results/pychopper/reports/barcode11.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode11.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode11.fastq.log
+    jobid: 124
+    reason: Missing output files: results/pychopper/unclassified/barcode11.fastq_unclassified.fastq, results/pychopper/full_length/barcode11.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode11.fastq_rescued1.fastq; Input files updated by another job: tmp/samples/barcode11.fastq_concat.fastq
+    wildcards: sample=barcode11.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode13.fastq_concat.fastq
+    output: results/pychopper/reports/barcode13.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode13.fastq_unclassified.fastq, results/pychopper/rescued/barcode13.fastq_rescued1.fastq, results/pychopper/reports/barcode13.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode13.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode13.fastq.log
+    jobid: 133
+    reason: Missing output files: results/pychopper/unclassified/barcode13.fastq_unclassified.fastq, results/pychopper/full_length/barcode13.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode13.fastq_rescued1.fastq; Input files updated by another job: tmp/samples/barcode13.fastq_concat.fastq
+    wildcards: sample=barcode13.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode15_concat.fastq
+    output: results/pychopper/reports/barcode15_pychopper1_report.pdf, results/pychopper/unclassified/barcode15_unclassified.fastq, results/pychopper/rescued/barcode15_rescued1.fastq, results/pychopper/reports/barcode15_pychopper_stats.txt, results/pychopper/full_length/barcode15_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode15.log
+    jobid: 46
+    reason: Input files updated by another job: tmp/samples/barcode15_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode15
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode10_concat.fastq
+    output: results/pychopper/reports/barcode10_pychopper1_report.pdf, results/pychopper/unclassified/barcode10_unclassified.fastq, results/pychopper/rescued/barcode10_rescued1.fastq, results/pychopper/reports/barcode10_pychopper_stats.txt, results/pychopper/full_length/barcode10_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode10.log
+    jobid: 58
+    reason: Input files updated by another job: tmp/samples/barcode10_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode10
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode14_concat.fastq
+    output: results/pychopper/reports/barcode14_pychopper1_report.pdf, results/pychopper/unclassified/barcode14_unclassified.fastq, results/pychopper/rescued/barcode14_rescued1.fastq, results/pychopper/reports/barcode14_pychopper_stats.txt, results/pychopper/full_length/barcode14_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode14.log
+    jobid: 70
+    reason: Input files updated by another job: tmp/samples/barcode14_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode14
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode11_concat.fastq
+    output: results/pychopper/reports/barcode11_pychopper1_report.pdf, results/pychopper/unclassified/barcode11_unclassified.fastq, results/pychopper/rescued/barcode11_rescued1.fastq, results/pychopper/reports/barcode11_pychopper_stats.txt, results/pychopper/full_length/barcode11_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode11.log
+    jobid: 4
+    reason: Input files updated by another job: tmp/samples/barcode11_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode11
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode09.fastq_concat.fastq
+    output: results/pychopper/reports/barcode09.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode09.fastq_unclassified.fastq, results/pychopper/rescued/barcode09.fastq_rescued1.fastq, results/pychopper/reports/barcode09.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode09.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode09.fastq.log
+    jobid: 127
+    reason: Missing output files: results/pychopper/full_length/barcode09.fastq_full_length1_cDNA.fastq, results/pychopper/unclassified/barcode09.fastq_unclassified.fastq, results/pychopper/rescued/barcode09.fastq_rescued1.fastq; Input files updated by another job: tmp/samples/barcode09.fastq_concat.fastq
+    wildcards: sample=barcode09.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode07.fastq_concat.fastq
+    output: results/pychopper/reports/barcode07.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode07.fastq_unclassified.fastq, results/pychopper/rescued/barcode07.fastq_rescued1.fastq, results/pychopper/reports/barcode07.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode07.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode07.fastq.log
+    jobid: 136
+    reason: Missing output files: results/pychopper/unclassified/barcode07.fastq_unclassified.fastq, results/pychopper/full_length/barcode07.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode07.fastq_rescued1.fastq; Input files updated by another job: tmp/samples/barcode07.fastq_concat.fastq
+    wildcards: sample=barcode07.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode15.fastq_concat.fastq
+    output: results/pychopper/reports/barcode15.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode15.fastq_unclassified.fastq, results/pychopper/rescued/barcode15.fastq_rescued1.fastq, results/pychopper/reports/barcode15.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode15.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode15.fastq.log
+    jobid: 145
+    reason: Missing output files: results/pychopper/full_length/barcode15.fastq_full_length1_cDNA.fastq, results/pychopper/unclassified/barcode15.fastq_unclassified.fastq, results/pychopper/rescued/barcode15.fastq_rescued1.fastq; Input files updated by another job: tmp/samples/barcode15.fastq_concat.fastq
+    wildcards: sample=barcode15.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode12_concat.fastq
+    output: results/pychopper/reports/barcode12_pychopper1_report.pdf, results/pychopper/unclassified/barcode12_unclassified.fastq, results/pychopper/rescued/barcode12_rescued1.fastq, results/pychopper/reports/barcode12_pychopper_stats.txt, results/pychopper/full_length/barcode12_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode12.log
+    jobid: 16
+    reason: Input files updated by another job: tmp/samples/barcode12_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode12
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode06.fastq_concat.fastq
+    output: results/pychopper/reports/barcode06.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode06.fastq_unclassified.fastq, results/pychopper/rescued/barcode06.fastq_rescued1.fastq, results/pychopper/reports/barcode06.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode06.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode06.fastq.log
+    jobid: 154
+    reason: Missing output files: results/pychopper/rescued/barcode06.fastq_rescued1.fastq, results/pychopper/full_length/barcode06.fastq_full_length1_cDNA.fastq, results/pychopper/unclassified/barcode06.fastq_unclassified.fastq; Input files updated by another job: tmp/samples/barcode06.fastq_concat.fastq
+    wildcards: sample=barcode06.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode07_concat.fastq
+    output: results/pychopper/reports/barcode07_pychopper1_report.pdf, results/pychopper/unclassified/barcode07_unclassified.fastq, results/pychopper/rescued/barcode07_rescued1.fastq, results/pychopper/reports/barcode07_pychopper_stats.txt, results/pychopper/full_length/barcode07_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode07.log
+    jobid: 28
+    reason: Input files updated by another job: tmp/samples/barcode07_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode07
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode05_concat.fastq
+    output: results/pychopper/reports/barcode05_pychopper1_report.pdf, results/pychopper/unclassified/barcode05_unclassified.fastq, results/pychopper/rescued/barcode05_rescued1.fastq, results/pychopper/reports/barcode05_pychopper_stats.txt, results/pychopper/full_length/barcode05_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode05.log
+    jobid: 40
+    reason: Input files updated by another job: tmp/samples/barcode05_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode05
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode04_concat.fastq
+    output: results/pychopper/reports/barcode04_pychopper1_report.pdf, results/pychopper/unclassified/barcode04_unclassified.fastq, results/pychopper/rescued/barcode04_rescued1.fastq, results/pychopper/reports/barcode04_pychopper_stats.txt, results/pychopper/full_length/barcode04_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode04.log
+    jobid: 52
+    reason: Input files updated by another job: tmp/samples/barcode04_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode04
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode06_concat.fastq
+    output: results/pychopper/reports/barcode06_pychopper1_report.pdf, results/pychopper/unclassified/barcode06_unclassified.fastq, results/pychopper/rescued/barcode06_rescued1.fastq, results/pychopper/reports/barcode06_pychopper_stats.txt, results/pychopper/full_length/barcode06_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode06.log
+    jobid: 64
+    reason: Input files updated by another job: tmp/samples/barcode06_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode06
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode04.fastq_concat.fastq
+    output: results/pychopper/reports/barcode04.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode04.fastq_unclassified.fastq, results/pychopper/rescued/barcode04.fastq_rescued1.fastq, results/pychopper/reports/barcode04.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode04.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode04.fastq.log
+    jobid: 148
+    reason: Missing output files: results/pychopper/full_length/barcode04.fastq_full_length1_cDNA.fastq, results/pychopper/unclassified/barcode04.fastq_unclassified.fastq, results/pychopper/rescued/barcode04.fastq_rescued1.fastq; Input files updated by another job: tmp/samples/barcode04.fastq_concat.fastq
+    wildcards: sample=barcode04.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode14.fastq_concat.fastq
+    output: results/pychopper/reports/barcode14.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode14.fastq_unclassified.fastq, results/pychopper/rescued/barcode14.fastq_rescued1.fastq, results/pychopper/reports/barcode14.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode14.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode14.fastq.log
+    jobid: 157
+    reason: Missing output files: results/pychopper/rescued/barcode14.fastq_rescued1.fastq, results/pychopper/full_length/barcode14.fastq_full_length1_cDNA.fastq, results/pychopper/unclassified/barcode14.fastq_unclassified.fastq; Input files updated by another job: tmp/samples/barcode14.fastq_concat.fastq
+    wildcards: sample=barcode14.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode12.fastq_concat.fastq
+    output: results/pychopper/reports/barcode12.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode12.fastq_unclassified.fastq, results/pychopper/rescued/barcode12.fastq_rescued1.fastq, results/pychopper/reports/barcode12.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode12.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode12.fastq.log
+    jobid: 130
+    reason: Missing output files: results/pychopper/unclassified/barcode12.fastq_unclassified.fastq, results/pychopper/full_length/barcode12.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode12.fastq_rescued1.fastq; Input files updated by another job: tmp/samples/barcode12.fastq_concat.fastq
+    wildcards: sample=barcode12.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode08.fastq_concat.fastq
+    output: results/pychopper/reports/barcode08.fastq_pychopper1_report.pdf, results/pychopper/unclassified/barcode08.fastq_unclassified.fastq, results/pychopper/rescued/barcode08.fastq_rescued1.fastq, results/pychopper/reports/barcode08.fastq_pychopper_stats.txt, results/pychopper/full_length/barcode08.fastq_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode08.fastq.log
+    jobid: 139
+    reason: Missing output files: results/pychopper/unclassified/barcode08.fastq_unclassified.fastq, results/pychopper/rescued/barcode08.fastq_rescued1.fastq, results/pychopper/full_length/barcode08.fastq_full_length1_cDNA.fastq; Input files updated by another job: tmp/samples/barcode08.fastq_concat.fastq
+    wildcards: sample=barcode08.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode09_concat.fastq
+    output: results/pychopper/reports/barcode09_pychopper1_report.pdf, results/pychopper/unclassified/barcode09_unclassified.fastq, results/pychopper/rescued/barcode09_rescued1.fastq, results/pychopper/reports/barcode09_pychopper_stats.txt, results/pychopper/full_length/barcode09_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode09.log
+    jobid: 10
+    reason: Input files updated by another job: tmp/samples/barcode09_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode09
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_first_round:
+    input: tmp/samples/barcode13_concat.fastq
+    output: results/pychopper/reports/barcode13_pychopper1_report.pdf, results/pychopper/unclassified/barcode13_unclassified.fastq, results/pychopper/rescued/barcode13_rescued1.fastq, results/pychopper/reports/barcode13_pychopper_stats.txt, results/pychopper/full_length/barcode13_full_length1_cDNA.fastq
+    log: logs/pychopper/barcode13.log
+    jobid: 22
+    reason: Input files updated by another job: tmp/samples/barcode13_concat.fastq; Set of input files has changed since last execution
+    wildcards: sample=barcode13
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+Would remove temporary output tmp/samples/barcode08_concat.fastq
+Would remove temporary output tmp/samples/barcode05.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode10.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode11.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode13.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode15_concat.fastq
+Would remove temporary output tmp/samples/barcode10_concat.fastq
+Would remove temporary output tmp/samples/barcode14_concat.fastq
+Would remove temporary output tmp/samples/barcode11_concat.fastq
+Would remove temporary output tmp/samples/barcode09.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode07.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode15.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode12_concat.fastq
+Would remove temporary output tmp/samples/barcode06.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode07_concat.fastq
+Would remove temporary output tmp/samples/barcode05_concat.fastq
+Would remove temporary output tmp/samples/barcode04_concat.fastq
+Would remove temporary output tmp/samples/barcode06_concat.fastq
+Would remove temporary output tmp/samples/barcode04.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode14.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode12.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode08.fastq_concat.fastq
+Would remove temporary output tmp/samples/barcode09_concat.fastq
+Would remove temporary output tmp/samples/barcode13_concat.fastq
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode13.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode13.fastq_pychopper2_report.pdf, tmp/pychopper/barcode13.fastq_unclassified.fastq, results/pychopper/rescued/barcode13.fastq_rescued2.fastq, results/pychopper/reports/barcode13.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode13.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode13.fastq.log
+    jobid: 134
+    reason: Missing output files: results/pychopper/rescued/barcode13.fastq_rescued2.fastq, results/pychopper/full_length/barcode13.fastq_full_length2_cDNA.fastq; Input files updated by another job: results/pychopper/unclassified/barcode13.fastq_unclassified.fastq
+    wildcards: sample=barcode13.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode09_unclassified.fastq
+    output: results/pychopper/reports/barcode09_pychopper2_report.pdf, tmp/pychopper/barcode09_unclassified.fastq, results/pychopper/rescued/barcode09_rescued2.fastq, results/pychopper/reports/barcode09_pychopper2_stats.txt, results/pychopper/full_length/barcode09_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode09.log
+    jobid: 12
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode09_unclassified.fastq
+    wildcards: sample=barcode09
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode10.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode10.fastq_pychopper2_report.pdf, tmp/pychopper/barcode10.fastq_unclassified.fastq, results/pychopper/rescued/barcode10.fastq_rescued2.fastq, results/pychopper/reports/barcode10.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode10.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode10.fastq.log
+    jobid: 152
+    reason: Missing output files: results/pychopper/full_length/barcode10.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode10.fastq_rescued2.fastq; Input files updated by another job: results/pychopper/unclassified/barcode10.fastq_unclassified.fastq
+    wildcards: sample=barcode10.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode13_unclassified.fastq
+    output: results/pychopper/reports/barcode13_pychopper2_report.pdf, tmp/pychopper/barcode13_unclassified.fastq, results/pychopper/rescued/barcode13_rescued2.fastq, results/pychopper/reports/barcode13_pychopper2_stats.txt, results/pychopper/full_length/barcode13_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode13.log
+    jobid: 24
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode13_unclassified.fastq
+    wildcards: sample=barcode13
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode07.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode07.fastq_pychopper2_report.pdf, tmp/pychopper/barcode07.fastq_unclassified.fastq, results/pychopper/rescued/barcode07.fastq_rescued2.fastq, results/pychopper/reports/barcode07.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode07.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode07.fastq.log
+    jobid: 137
+    reason: Missing output files: results/pychopper/full_length/barcode07.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode07.fastq_rescued2.fastq; Input files updated by another job: results/pychopper/unclassified/barcode07.fastq_unclassified.fastq
+    wildcards: sample=barcode07.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode08_unclassified.fastq
+    output: results/pychopper/reports/barcode08_pychopper2_report.pdf, tmp/pychopper/barcode08_unclassified.fastq, results/pychopper/rescued/barcode08_rescued2.fastq, results/pychopper/reports/barcode08_pychopper2_stats.txt, results/pychopper/full_length/barcode08_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode08.log
+    jobid: 36
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode08_unclassified.fastq
+    wildcards: sample=barcode08
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode15.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode15.fastq_pychopper2_report.pdf, tmp/pychopper/barcode15.fastq_unclassified.fastq, results/pychopper/rescued/barcode15.fastq_rescued2.fastq, results/pychopper/reports/barcode15.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode15.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode15.fastq.log
+    jobid: 146
+    reason: Missing output files: results/pychopper/full_length/barcode15.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode15.fastq_rescued2.fastq; Input files updated by another job: results/pychopper/unclassified/barcode15.fastq_unclassified.fastq
+    wildcards: sample=barcode15.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode09.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode09.fastq_pychopper2_report.pdf, tmp/pychopper/barcode09.fastq_unclassified.fastq, results/pychopper/rescued/barcode09.fastq_rescued2.fastq, results/pychopper/reports/barcode09.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode09.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode09.fastq.log
+    jobid: 128
+    reason: Missing output files: results/pychopper/full_length/barcode09.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode09.fastq_rescued2.fastq; Input files updated by another job: results/pychopper/unclassified/barcode09.fastq_unclassified.fastq
+    wildcards: sample=barcode09.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode06.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode06.fastq_pychopper2_report.pdf, tmp/pychopper/barcode06.fastq_unclassified.fastq, results/pychopper/rescued/barcode06.fastq_rescued2.fastq, results/pychopper/reports/barcode06.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode06.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode06.fastq.log
+    jobid: 155
+    reason: Missing output files: results/pychopper/full_length/barcode06.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode06.fastq_rescued2.fastq; Input files updated by another job: results/pychopper/unclassified/barcode06.fastq_unclassified.fastq
+    wildcards: sample=barcode06.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode15_unclassified.fastq
+    output: results/pychopper/reports/barcode15_pychopper2_report.pdf, tmp/pychopper/barcode15_unclassified.fastq, results/pychopper/rescued/barcode15_rescued2.fastq, results/pychopper/reports/barcode15_pychopper2_stats.txt, results/pychopper/full_length/barcode15_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode15.log
+    jobid: 48
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode15_unclassified.fastq
+    wildcards: sample=barcode15
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode10_unclassified.fastq
+    output: results/pychopper/reports/barcode10_pychopper2_report.pdf, tmp/pychopper/barcode10_unclassified.fastq, results/pychopper/rescued/barcode10_rescued2.fastq, results/pychopper/reports/barcode10_pychopper2_stats.txt, results/pychopper/full_length/barcode10_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode10.log
+    jobid: 60
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode10_unclassified.fastq
+    wildcards: sample=barcode10
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode14_unclassified.fastq
+    output: results/pychopper/reports/barcode14_pychopper2_report.pdf, tmp/pychopper/barcode14_unclassified.fastq, results/pychopper/rescued/barcode14_rescued2.fastq, results/pychopper/reports/barcode14_pychopper2_stats.txt, results/pychopper/full_length/barcode14_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode14.log
+    jobid: 72
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode14_unclassified.fastq
+    wildcards: sample=barcode14
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode14.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode14.fastq_pychopper2_report.pdf, tmp/pychopper/barcode14.fastq_unclassified.fastq, results/pychopper/rescued/barcode14.fastq_rescued2.fastq, results/pychopper/reports/barcode14.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode14.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode14.fastq.log
+    jobid: 158
+    reason: Missing output files: results/pychopper/full_length/barcode14.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode14.fastq_rescued2.fastq; Input files updated by another job: results/pychopper/unclassified/barcode14.fastq_unclassified.fastq
+    wildcards: sample=barcode14.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode12.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode12.fastq_pychopper2_report.pdf, tmp/pychopper/barcode12.fastq_unclassified.fastq, results/pychopper/rescued/barcode12.fastq_rescued2.fastq, results/pychopper/reports/barcode12.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode12.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode12.fastq.log
+    jobid: 131
+    reason: Missing output files: results/pychopper/full_length/barcode12.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode12.fastq_rescued2.fastq; Input files updated by another job: results/pychopper/unclassified/barcode12.fastq_unclassified.fastq
+    wildcards: sample=barcode12.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode11_unclassified.fastq
+    output: results/pychopper/reports/barcode11_pychopper2_report.pdf, tmp/pychopper/barcode11_unclassified.fastq, results/pychopper/rescued/barcode11_rescued2.fastq, results/pychopper/reports/barcode11_pychopper2_stats.txt, results/pychopper/full_length/barcode11_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode11.log
+    jobid: 6
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode11_unclassified.fastq
+    wildcards: sample=barcode11
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode04.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode04.fastq_pychopper2_report.pdf, tmp/pychopper/barcode04.fastq_unclassified.fastq, results/pychopper/rescued/barcode04.fastq_rescued2.fastq, results/pychopper/reports/barcode04.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode04.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode04.fastq.log
+    jobid: 149
+    reason: Missing output files: results/pychopper/full_length/barcode04.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode04.fastq_rescued2.fastq; Input files updated by another job: results/pychopper/unclassified/barcode04.fastq_unclassified.fastq
+    wildcards: sample=barcode04.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode08.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode08.fastq_pychopper2_report.pdf, tmp/pychopper/barcode08.fastq_unclassified.fastq, results/pychopper/rescued/barcode08.fastq_rescued2.fastq, results/pychopper/reports/barcode08.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode08.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode08.fastq.log
+    jobid: 140
+    reason: Missing output files: results/pychopper/full_length/barcode08.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode08.fastq_rescued2.fastq; Input files updated by another job: results/pychopper/unclassified/barcode08.fastq_unclassified.fastq
+    wildcards: sample=barcode08.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode12_unclassified.fastq
+    output: results/pychopper/reports/barcode12_pychopper2_report.pdf, tmp/pychopper/barcode12_unclassified.fastq, results/pychopper/rescued/barcode12_rescued2.fastq, results/pychopper/reports/barcode12_pychopper2_stats.txt, results/pychopper/full_length/barcode12_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode12.log
+    jobid: 18
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode12_unclassified.fastq
+    wildcards: sample=barcode12
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode07_unclassified.fastq
+    output: results/pychopper/reports/barcode07_pychopper2_report.pdf, tmp/pychopper/barcode07_unclassified.fastq, results/pychopper/rescued/barcode07_rescued2.fastq, results/pychopper/reports/barcode07_pychopper2_stats.txt, results/pychopper/full_length/barcode07_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode07.log
+    jobid: 30
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode07_unclassified.fastq
+    wildcards: sample=barcode07
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode05_unclassified.fastq
+    output: results/pychopper/reports/barcode05_pychopper2_report.pdf, tmp/pychopper/barcode05_unclassified.fastq, results/pychopper/rescued/barcode05_rescued2.fastq, results/pychopper/reports/barcode05_pychopper2_stats.txt, results/pychopper/full_length/barcode05_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode05.log
+    jobid: 42
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode05_unclassified.fastq
+    wildcards: sample=barcode05
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode04_unclassified.fastq
+    output: results/pychopper/reports/barcode04_pychopper2_report.pdf, tmp/pychopper/barcode04_unclassified.fastq, results/pychopper/rescued/barcode04_rescued2.fastq, results/pychopper/reports/barcode04_pychopper2_stats.txt, results/pychopper/full_length/barcode04_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode04.log
+    jobid: 54
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode04_unclassified.fastq
+    wildcards: sample=barcode04
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode05.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode05.fastq_pychopper2_report.pdf, tmp/pychopper/barcode05.fastq_unclassified.fastq, results/pychopper/rescued/barcode05.fastq_rescued2.fastq, results/pychopper/reports/barcode05.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode05.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode05.fastq.log
+    jobid: 143
+    reason: Missing output files: results/pychopper/full_length/barcode05.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode05.fastq_rescued2.fastq; Input files updated by another job: results/pychopper/unclassified/barcode05.fastq_unclassified.fastq
+    wildcards: sample=barcode05.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode06_unclassified.fastq
+    output: results/pychopper/reports/barcode06_pychopper2_report.pdf, tmp/pychopper/barcode06_unclassified.fastq, results/pychopper/rescued/barcode06_rescued2.fastq, results/pychopper/reports/barcode06_pychopper2_stats.txt, results/pychopper/full_length/barcode06_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode06.log
+    jobid: 66
+    reason: Input files updated by another job: results/pychopper/unclassified/barcode06_unclassified.fastq
+    wildcards: sample=barcode06
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+
+[Mon Oct 28 08:43:32 2024]
+rule pychopper_second_round:
+    input: results/pychopper/unclassified/barcode11.fastq_unclassified.fastq
+    output: results/pychopper/reports/barcode11.fastq_pychopper2_report.pdf, tmp/pychopper/barcode11.fastq_unclassified.fastq, results/pychopper/rescued/barcode11.fastq_rescued2.fastq, results/pychopper/reports/barcode11.fastq_pychopper2_stats.txt, results/pychopper/full_length/barcode11.fastq_full_length2_cDNA.fastq
+    log: logs/pychopper2/barcode11.fastq.log
+    jobid: 125
+    reason: Missing output files: results/pychopper/rescued/barcode11.fastq_rescued2.fastq, results/pychopper/full_length/barcode11.fastq_full_length2_cDNA.fastq; Input files updated by another job: results/pychopper/unclassified/barcode11.fastq_unclassified.fastq
+    wildcards: sample=barcode11.fastq
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=120
+
+Would remove temporary output tmp/pychopper/barcode13.fastq_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode09_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode10.fastq_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode13_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode07.fastq_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode08_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode15.fastq_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode09.fastq_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode06.fastq_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode15_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode10_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode14_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode14.fastq_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode12.fastq_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode11_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode04.fastq_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode08.fastq_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode12_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode07_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode05_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode04_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode05.fastq_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode06_unclassified.fastq
+Would remove temporary output tmp/pychopper/barcode11.fastq_unclassified.fastq
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode14_full_length1_cDNA.fastq, results/pychopper/full_length/barcode14_full_length2_cDNA.fastq, results/pychopper/rescued/barcode14_rescued1.fastq, results/pychopper/rescued/barcode14_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode14_merged_cDNA.fastq, tmp/read_counts/barcode14/barcode14_total_reads_cDNA.tsv
+    jobid: 69
+    reason: Input files updated by another job: results/pychopper/full_length/barcode14_full_length1_cDNA.fastq, results/pychopper/rescued/barcode14_rescued2.fastq, results/pychopper/rescued/barcode14_rescued1.fastq, results/pychopper/full_length/barcode14_full_length2_cDNA.fastq
+    wildcards: sample=barcode14
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode06.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode06.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode06.fastq_rescued1.fastq, results/pychopper/rescued/barcode06.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode06.fastq_merged_cDNA.fastq, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_cDNA.tsv
+    jobid: 153
+    reason: Missing output files: results/pychopper/merged_full_length_cDNA/barcode06.fastq_merged_cDNA.fastq, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_cDNA.tsv; Input files updated by another job: results/pychopper/full_length/barcode06.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode06.fastq_rescued1.fastq, results/pychopper/full_length/barcode06.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode06.fastq_rescued2.fastq
+    wildcards: sample=barcode06.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode09.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode09.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode09.fastq_rescued1.fastq, results/pychopper/rescued/barcode09.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode09.fastq_merged_cDNA.fastq, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_cDNA.tsv
+    jobid: 126
+    reason: Missing output files: results/pychopper/merged_full_length_cDNA/barcode09.fastq_merged_cDNA.fastq, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_cDNA.tsv; Input files updated by another job: results/pychopper/full_length/barcode09.fastq_full_length2_cDNA.fastq, results/pychopper/full_length/barcode09.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode09.fastq_rescued2.fastq, results/pychopper/rescued/barcode09.fastq_rescued1.fastq
+    wildcards: sample=barcode09.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode07.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode07.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode07.fastq_rescued1.fastq, results/pychopper/rescued/barcode07.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode07.fastq_merged_cDNA.fastq, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_cDNA.tsv
+    jobid: 135
+    reason: Missing output files: tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_cDNA.tsv, results/pychopper/merged_full_length_cDNA/barcode07.fastq_merged_cDNA.fastq; Input files updated by another job: results/pychopper/full_length/barcode07.fastq_full_length2_cDNA.fastq, results/pychopper/full_length/barcode07.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode07.fastq_rescued2.fastq, results/pychopper/rescued/barcode07.fastq_rescued1.fastq
+    wildcards: sample=barcode07.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode15.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode15.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode15.fastq_rescued1.fastq, results/pychopper/rescued/barcode15.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode15.fastq_merged_cDNA.fastq, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_cDNA.tsv
+    jobid: 144
+    reason: Missing output files: results/pychopper/merged_full_length_cDNA/barcode15.fastq_merged_cDNA.fastq, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_cDNA.tsv; Input files updated by another job: results/pychopper/rescued/barcode15.fastq_rescued1.fastq, results/pychopper/rescued/barcode15.fastq_rescued2.fastq, results/pychopper/full_length/barcode15.fastq_full_length2_cDNA.fastq, results/pychopper/full_length/barcode15.fastq_full_length1_cDNA.fastq
+    wildcards: sample=barcode15.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode12_full_length1_cDNA.fastq, results/pychopper/full_length/barcode12_full_length2_cDNA.fastq, results/pychopper/rescued/barcode12_rescued1.fastq, results/pychopper/rescued/barcode12_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode12_merged_cDNA.fastq, tmp/read_counts/barcode12/barcode12_total_reads_cDNA.tsv
+    jobid: 15
+    reason: Input files updated by another job: results/pychopper/full_length/barcode12_full_length2_cDNA.fastq, results/pychopper/rescued/barcode12_rescued1.fastq, results/pychopper/full_length/barcode12_full_length1_cDNA.fastq, results/pychopper/rescued/barcode12_rescued2.fastq
+    wildcards: sample=barcode12
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode07_full_length1_cDNA.fastq, results/pychopper/full_length/barcode07_full_length2_cDNA.fastq, results/pychopper/rescued/barcode07_rescued1.fastq, results/pychopper/rescued/barcode07_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode07_merged_cDNA.fastq, tmp/read_counts/barcode07/barcode07_total_reads_cDNA.tsv
+    jobid: 27
+    reason: Input files updated by another job: results/pychopper/rescued/barcode07_rescued2.fastq, results/pychopper/full_length/barcode07_full_length2_cDNA.fastq, results/pychopper/rescued/barcode07_rescued1.fastq, results/pychopper/full_length/barcode07_full_length1_cDNA.fastq
+    wildcards: sample=barcode07
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode05_full_length1_cDNA.fastq, results/pychopper/full_length/barcode05_full_length2_cDNA.fastq, results/pychopper/rescued/barcode05_rescued1.fastq, results/pychopper/rescued/barcode05_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode05_merged_cDNA.fastq, tmp/read_counts/barcode05/barcode05_total_reads_cDNA.tsv
+    jobid: 39
+    reason: Input files updated by another job: results/pychopper/full_length/barcode05_full_length2_cDNA.fastq, results/pychopper/rescued/barcode05_rescued1.fastq, results/pychopper/rescued/barcode05_rescued2.fastq, results/pychopper/full_length/barcode05_full_length1_cDNA.fastq
+    wildcards: sample=barcode05
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode04_full_length1_cDNA.fastq, results/pychopper/full_length/barcode04_full_length2_cDNA.fastq, results/pychopper/rescued/barcode04_rescued1.fastq, results/pychopper/rescued/barcode04_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode04_merged_cDNA.fastq, tmp/read_counts/barcode04/barcode04_total_reads_cDNA.tsv
+    jobid: 51
+    reason: Input files updated by another job: results/pychopper/full_length/barcode04_full_length2_cDNA.fastq, results/pychopper/rescued/barcode04_rescued2.fastq, results/pychopper/full_length/barcode04_full_length1_cDNA.fastq, results/pychopper/rescued/barcode04_rescued1.fastq
+    wildcards: sample=barcode04
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode06_full_length1_cDNA.fastq, results/pychopper/full_length/barcode06_full_length2_cDNA.fastq, results/pychopper/rescued/barcode06_rescued1.fastq, results/pychopper/rescued/barcode06_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode06_merged_cDNA.fastq, tmp/read_counts/barcode06/barcode06_total_reads_cDNA.tsv
+    jobid: 63
+    reason: Input files updated by another job: results/pychopper/full_length/barcode06_full_length2_cDNA.fastq, results/pychopper/full_length/barcode06_full_length1_cDNA.fastq, results/pychopper/rescued/barcode06_rescued1.fastq, results/pychopper/rescued/barcode06_rescued2.fastq
+    wildcards: sample=barcode06
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode08.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode08.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode08.fastq_rescued1.fastq, results/pychopper/rescued/barcode08.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode08.fastq_merged_cDNA.fastq, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_cDNA.tsv
+    jobid: 138
+    reason: Missing output files: tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_cDNA.tsv, results/pychopper/merged_full_length_cDNA/barcode08.fastq_merged_cDNA.fastq; Input files updated by another job: results/pychopper/full_length/barcode08.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode08.fastq_rescued2.fastq, results/pychopper/rescued/barcode08.fastq_rescued1.fastq, results/pychopper/full_length/barcode08.fastq_full_length1_cDNA.fastq
+    wildcards: sample=barcode08.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode04.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode04.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode04.fastq_rescued1.fastq, results/pychopper/rescued/barcode04.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode04.fastq_merged_cDNA.fastq, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_cDNA.tsv
+    jobid: 147
+    reason: Missing output files: results/pychopper/merged_full_length_cDNA/barcode04.fastq_merged_cDNA.fastq, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_cDNA.tsv; Input files updated by another job: results/pychopper/full_length/barcode04.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode04.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode04.fastq_rescued1.fastq, results/pychopper/rescued/barcode04.fastq_rescued2.fastq
+    wildcards: sample=barcode04.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode14.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode14.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode14.fastq_rescued1.fastq, results/pychopper/rescued/barcode14.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode14.fastq_merged_cDNA.fastq, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_cDNA.tsv
+    jobid: 156
+    reason: Missing output files: results/pychopper/merged_full_length_cDNA/barcode14.fastq_merged_cDNA.fastq, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_cDNA.tsv; Input files updated by another job: results/pychopper/full_length/barcode14.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode14.fastq_rescued1.fastq, results/pychopper/full_length/barcode14.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode14.fastq_rescued2.fastq
+    wildcards: sample=barcode14.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode12.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode12.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode12.fastq_rescued1.fastq, results/pychopper/rescued/barcode12.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode12.fastq_merged_cDNA.fastq, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_cDNA.tsv
+    jobid: 129
+    reason: Missing output files: tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_cDNA.tsv, results/pychopper/merged_full_length_cDNA/barcode12.fastq_merged_cDNA.fastq; Input files updated by another job: results/pychopper/full_length/barcode12.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode12.fastq_rescued2.fastq, results/pychopper/full_length/barcode12.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode12.fastq_rescued1.fastq
+    wildcards: sample=barcode12.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode09_full_length1_cDNA.fastq, results/pychopper/full_length/barcode09_full_length2_cDNA.fastq, results/pychopper/rescued/barcode09_rescued1.fastq, results/pychopper/rescued/barcode09_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode09_merged_cDNA.fastq, tmp/read_counts/barcode09/barcode09_total_reads_cDNA.tsv
+    jobid: 9
+    reason: Input files updated by another job: results/pychopper/full_length/barcode09_full_length2_cDNA.fastq, results/pychopper/rescued/barcode09_rescued1.fastq, results/pychopper/rescued/barcode09_rescued2.fastq, results/pychopper/full_length/barcode09_full_length1_cDNA.fastq
+    wildcards: sample=barcode09
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode11_full_length1_cDNA.fastq, results/pychopper/full_length/barcode11_full_length2_cDNA.fastq, results/pychopper/rescued/barcode11_rescued1.fastq, results/pychopper/rescued/barcode11_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode11_merged_cDNA.fastq, tmp/read_counts/barcode11/barcode11_total_reads_cDNA.tsv
+    jobid: 3
+    reason: Input files updated by another job: results/pychopper/rescued/barcode11_rescued1.fastq, results/pychopper/full_length/barcode11_full_length2_cDNA.fastq, results/pychopper/rescued/barcode11_rescued2.fastq, results/pychopper/full_length/barcode11_full_length1_cDNA.fastq
+    wildcards: sample=barcode11
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode13_full_length1_cDNA.fastq, results/pychopper/full_length/barcode13_full_length2_cDNA.fastq, results/pychopper/rescued/barcode13_rescued1.fastq, results/pychopper/rescued/barcode13_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode13_merged_cDNA.fastq, tmp/read_counts/barcode13/barcode13_total_reads_cDNA.tsv
+    jobid: 21
+    reason: Input files updated by another job: results/pychopper/rescued/barcode13_rescued2.fastq, results/pychopper/full_length/barcode13_full_length2_cDNA.fastq, results/pychopper/rescued/barcode13_rescued1.fastq, results/pychopper/full_length/barcode13_full_length1_cDNA.fastq
+    wildcards: sample=barcode13
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode08_full_length1_cDNA.fastq, results/pychopper/full_length/barcode08_full_length2_cDNA.fastq, results/pychopper/rescued/barcode08_rescued1.fastq, results/pychopper/rescued/barcode08_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode08_merged_cDNA.fastq, tmp/read_counts/barcode08/barcode08_total_reads_cDNA.tsv
+    jobid: 33
+    reason: Input files updated by another job: results/pychopper/full_length/barcode08_full_length1_cDNA.fastq, results/pychopper/full_length/barcode08_full_length2_cDNA.fastq, results/pychopper/rescued/barcode08_rescued1.fastq, results/pychopper/rescued/barcode08_rescued2.fastq
+    wildcards: sample=barcode08
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode13.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode13.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode13.fastq_rescued1.fastq, results/pychopper/rescued/barcode13.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode13.fastq_merged_cDNA.fastq, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_cDNA.tsv
+    jobid: 132
+    reason: Missing output files: tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_cDNA.tsv, results/pychopper/merged_full_length_cDNA/barcode13.fastq_merged_cDNA.fastq; Input files updated by another job: results/pychopper/rescued/barcode13.fastq_rescued2.fastq, results/pychopper/full_length/barcode13.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode13.fastq_rescued1.fastq, results/pychopper/full_length/barcode13.fastq_full_length1_cDNA.fastq
+    wildcards: sample=barcode13.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode05.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode05.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode05.fastq_rescued1.fastq, results/pychopper/rescued/barcode05.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode05.fastq_merged_cDNA.fastq, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_cDNA.tsv
+    jobid: 141
+    reason: Missing output files: results/pychopper/merged_full_length_cDNA/barcode05.fastq_merged_cDNA.fastq, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_cDNA.tsv; Input files updated by another job: results/pychopper/full_length/barcode05.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode05.fastq_rescued1.fastq, results/pychopper/rescued/barcode05.fastq_rescued2.fastq, results/pychopper/full_length/barcode05.fastq_full_length2_cDNA.fastq
+    wildcards: sample=barcode05.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode10.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode10.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode10.fastq_rescued1.fastq, results/pychopper/rescued/barcode10.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode10.fastq_merged_cDNA.fastq, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_cDNA.tsv
+    jobid: 150
+    reason: Missing output files: tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_cDNA.tsv, results/pychopper/merged_full_length_cDNA/barcode10.fastq_merged_cDNA.fastq; Input files updated by another job: results/pychopper/rescued/barcode10.fastq_rescued1.fastq, results/pychopper/full_length/barcode10.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode10.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode10.fastq_rescued2.fastq
+    wildcards: sample=barcode10.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode15_full_length1_cDNA.fastq, results/pychopper/full_length/barcode15_full_length2_cDNA.fastq, results/pychopper/rescued/barcode15_rescued1.fastq, results/pychopper/rescued/barcode15_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode15_merged_cDNA.fastq, tmp/read_counts/barcode15/barcode15_total_reads_cDNA.tsv
+    jobid: 45
+    reason: Input files updated by another job: results/pychopper/rescued/barcode15_rescued2.fastq, results/pychopper/full_length/barcode15_full_length2_cDNA.fastq, results/pychopper/full_length/barcode15_full_length1_cDNA.fastq, results/pychopper/rescued/barcode15_rescued1.fastq
+    wildcards: sample=barcode15
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode11.fastq_full_length1_cDNA.fastq, results/pychopper/full_length/barcode11.fastq_full_length2_cDNA.fastq, results/pychopper/rescued/barcode11.fastq_rescued1.fastq, results/pychopper/rescued/barcode11.fastq_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode11.fastq_merged_cDNA.fastq, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_cDNA.tsv
+    jobid: 123
+    reason: Missing output files: tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_cDNA.tsv, results/pychopper/merged_full_length_cDNA/barcode11.fastq_merged_cDNA.fastq; Input files updated by another job: results/pychopper/full_length/barcode11.fastq_full_length1_cDNA.fastq, results/pychopper/rescued/barcode11.fastq_rescued2.fastq, results/pychopper/rescued/barcode11.fastq_rescued1.fastq, results/pychopper/full_length/barcode11.fastq_full_length2_cDNA.fastq
+    wildcards: sample=barcode11.fastq
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_cDNA_reads:
+    input: results/pychopper/full_length/barcode10_full_length1_cDNA.fastq, results/pychopper/full_length/barcode10_full_length2_cDNA.fastq, results/pychopper/rescued/barcode10_rescued1.fastq, results/pychopper/rescued/barcode10_rescued2.fastq
+    output: results/pychopper/merged_full_length_cDNA/barcode10_merged_cDNA.fastq, tmp/read_counts/barcode10/barcode10_total_reads_cDNA.tsv
+    jobid: 57
+    reason: Input files updated by another job: results/pychopper/rescued/barcode10_rescued2.fastq, results/pychopper/full_length/barcode10_full_length2_cDNA.fastq, results/pychopper/rescued/barcode10_rescued1.fastq, results/pychopper/full_length/barcode10_full_length1_cDNA.fastq
+    wildcards: sample=barcode10
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+Would remove temporary output tmp/read_counts/barcode14/barcode14_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode12/barcode12_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode07/barcode07_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode05/barcode05_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode04/barcode04_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode06/barcode06_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode09/barcode09_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode11/barcode11_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode13/barcode13_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode08/barcode08_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode15/barcode15_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode10/barcode10_total_reads_cDNA.tsv
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode13.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode13.fastq_polyA_removed.fastq, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode13.fastq.log
+    jobid: 162
+    reason: Missing output files: tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_polyA.tsv, results/pychopper/polyA_removed/barcode13.fastq_polyA_removed.fastq; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode13.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode13.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode04.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode04.fastq_polyA_removed.fastq, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode04.fastq.log
+    jobid: 167
+    reason: Missing output files: results/pychopper/polyA_removed/barcode04.fastq_polyA_removed.fastq, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_polyA.tsv; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode04.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode04.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode06_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode06_polyA_removed.fastq, tmp/read_counts/barcode06/barcode06_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode06.log
+    jobid: 62
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode06_merged_cDNA.fastq
+    wildcards: sample=barcode06
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode05.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode05.fastq_polyA_removed.fastq, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode05.fastq.log
+    jobid: 165
+    reason: Missing output files: tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_polyA.tsv, results/pychopper/polyA_removed/barcode05.fastq_polyA_removed.fastq; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode05.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode05.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode14.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode14.fastq_polyA_removed.fastq, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode14.fastq.log
+    jobid: 170
+    reason: Missing output files: results/pychopper/polyA_removed/barcode14.fastq_polyA_removed.fastq, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_polyA.tsv; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode14.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode14.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode09_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode09_polyA_removed.fastq, tmp/read_counts/barcode09/barcode09_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode09.log
+    jobid: 8
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode09_merged_cDNA.fastq
+    wildcards: sample=barcode09
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode09.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode09.fastq_polyA_removed.fastq, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode09.fastq.log
+    jobid: 160
+    reason: Missing output files: results/pychopper/polyA_removed/barcode09.fastq_polyA_removed.fastq, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_polyA.tsv; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode09.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode09.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode11_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode11_polyA_removed.fastq, tmp/read_counts/barcode11/barcode11_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode11.log
+    jobid: 2
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode11_merged_cDNA.fastq
+    wildcards: sample=barcode11
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode13_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode13_polyA_removed.fastq, tmp/read_counts/barcode13/barcode13_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode13.log
+    jobid: 20
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode13_merged_cDNA.fastq
+    wildcards: sample=barcode13
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode08_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode08_polyA_removed.fastq, tmp/read_counts/barcode08/barcode08_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode08.log
+    jobid: 32
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode08_merged_cDNA.fastq
+    wildcards: sample=barcode08
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode15_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode15_polyA_removed.fastq, tmp/read_counts/barcode15/barcode15_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode15.log
+    jobid: 44
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode15_merged_cDNA.fastq
+    wildcards: sample=barcode15
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode07.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode07.fastq_polyA_removed.fastq, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode07.fastq.log
+    jobid: 163
+    reason: Missing output files: results/pychopper/polyA_removed/barcode07.fastq_polyA_removed.fastq, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_polyA.tsv; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode07.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode07.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode10.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode10.fastq_polyA_removed.fastq, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode10.fastq.log
+    jobid: 168
+    reason: Missing output files: tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_polyA.tsv, results/pychopper/polyA_removed/barcode10.fastq_polyA_removed.fastq; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode10.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode10.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode10_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode10_polyA_removed.fastq, tmp/read_counts/barcode10/barcode10_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode10.log
+    jobid: 56
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode10_merged_cDNA.fastq
+    wildcards: sample=barcode10
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode14_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode14_polyA_removed.fastq, tmp/read_counts/barcode14/barcode14_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode14.log
+    jobid: 68
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode14_merged_cDNA.fastq
+    wildcards: sample=barcode14
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode12.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode12.fastq_polyA_removed.fastq, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode12.fastq.log
+    jobid: 161
+    reason: Missing output files: results/pychopper/polyA_removed/barcode12.fastq_polyA_removed.fastq, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_polyA.tsv; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode12.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode12.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode15.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode15.fastq_polyA_removed.fastq, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode15.fastq.log
+    jobid: 166
+    reason: Missing output files: tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_polyA.tsv, results/pychopper/polyA_removed/barcode15.fastq_polyA_removed.fastq; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode15.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode15.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode12_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode12_polyA_removed.fastq, tmp/read_counts/barcode12/barcode12_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode12.log
+    jobid: 14
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode12_merged_cDNA.fastq
+    wildcards: sample=barcode12
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode07_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode07_polyA_removed.fastq, tmp/read_counts/barcode07/barcode07_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode07.log
+    jobid: 26
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode07_merged_cDNA.fastq
+    wildcards: sample=barcode07
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode06.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode06.fastq_polyA_removed.fastq, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode06.fastq.log
+    jobid: 169
+    reason: Missing output files: tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_polyA.tsv, results/pychopper/polyA_removed/barcode06.fastq_polyA_removed.fastq; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode06.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode06.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode08.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode08.fastq_polyA_removed.fastq, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode08.fastq.log
+    jobid: 164
+    reason: Missing output files: tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_polyA.tsv, results/pychopper/polyA_removed/barcode08.fastq_polyA_removed.fastq; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode08.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode08.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode11.fastq_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode11.fastq_polyA_removed.fastq, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode11.fastq.log
+    jobid: 159
+    reason: Missing output files: results/pychopper/polyA_removed/barcode11.fastq_polyA_removed.fastq, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_polyA.tsv; Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode11.fastq_merged_cDNA.fastq
+    wildcards: sample=barcode11.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode05_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode05_polyA_removed.fastq, tmp/read_counts/barcode05/barcode05_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode05.log
+    jobid: 38
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode05_merged_cDNA.fastq
+    wildcards: sample=barcode05
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule polyA_removal:
+    input: results/pychopper/merged_full_length_cDNA/barcode04_merged_cDNA.fastq
+    output: results/pychopper/polyA_removed/barcode04_polyA_removed.fastq, tmp/read_counts/barcode04/barcode04_total_reads_polyA.tsv
+    log: logs/polyA_removed/barcode04.log
+    jobid: 50
+    reason: Input files updated by another job: results/pychopper/merged_full_length_cDNA/barcode04_merged_cDNA.fastq
+    wildcards: sample=barcode04
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+Would remove temporary output tmp/read_counts/barcode06/barcode06_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode09/barcode09_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode11/barcode11_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode13/barcode13_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode08/barcode08_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode15/barcode15_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode10/barcode10_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode14/barcode14_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode12/barcode12_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode07/barcode07_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode05/barcode05_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode04/barcode04_total_reads_polyA.tsv
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode05.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode05.fastq/barcode05.fastq_SSP_removed.fastq, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode05.fastq_SSP_removed.log
+    jobid: 177
+    reason: Missing output files: tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode05.fastq_polyA_removed.fastq
+    wildcards: sample=barcode05.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode15_polyA_removed.fastq
+    output: results/pychopper/barcode15/barcode15_SSP_removed.fastq, tmp/read_counts/barcode15/barcode15_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode15_SSP_removed.log
+    jobid: 43
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode15_polyA_removed.fastq
+    wildcards: sample=barcode15
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode14.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode14.fastq/barcode14.fastq_SSP_removed.fastq, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode14.fastq_SSP_removed.log
+    jobid: 182
+    reason: Missing output files: tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode14.fastq_polyA_removed.fastq
+    wildcards: sample=barcode14.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode09.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode09.fastq/barcode09.fastq_SSP_removed.fastq, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode09.fastq_SSP_removed.log
+    jobid: 172
+    reason: Missing output files: tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode09.fastq_polyA_removed.fastq
+    wildcards: sample=barcode09.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode10_polyA_removed.fastq
+    output: results/pychopper/barcode10/barcode10_SSP_removed.fastq, tmp/read_counts/barcode10/barcode10_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode10_SSP_removed.log
+    jobid: 55
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode10_polyA_removed.fastq
+    wildcards: sample=barcode10
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode11_polyA_removed.fastq
+    output: results/pychopper/barcode11/barcode11_SSP_removed.fastq, tmp/read_counts/barcode11/barcode11_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode11_SSP_removed.log
+    jobid: 1
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode11_polyA_removed.fastq
+    wildcards: sample=barcode11
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode14_polyA_removed.fastq
+    output: results/pychopper/barcode14/barcode14_SSP_removed.fastq, tmp/read_counts/barcode14/barcode14_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode14_SSP_removed.log
+    jobid: 67
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode14_polyA_removed.fastq
+    wildcards: sample=barcode14
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode07.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode07.fastq/barcode07.fastq_SSP_removed.fastq, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode07.fastq_SSP_removed.log
+    jobid: 175
+    reason: Missing output files: tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode07.fastq_polyA_removed.fastq
+    wildcards: sample=barcode07.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode10.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode10.fastq/barcode10.fastq_SSP_removed.fastq, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode10.fastq_SSP_removed.log
+    jobid: 180
+    reason: Missing output files: tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode10.fastq_polyA_removed.fastq
+    wildcards: sample=barcode10.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode12_polyA_removed.fastq
+    output: results/pychopper/barcode12/barcode12_SSP_removed.fastq, tmp/read_counts/barcode12/barcode12_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode12_SSP_removed.log
+    jobid: 13
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode12_polyA_removed.fastq
+    wildcards: sample=barcode12
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode15.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode15.fastq/barcode15.fastq_SSP_removed.fastq, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode15.fastq_SSP_removed.log
+    jobid: 178
+    reason: Missing output files: tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode15.fastq_polyA_removed.fastq
+    wildcards: sample=barcode15.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode07_polyA_removed.fastq
+    output: results/pychopper/barcode07/barcode07_SSP_removed.fastq, tmp/read_counts/barcode07/barcode07_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode07_SSP_removed.log
+    jobid: 25
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode07_polyA_removed.fastq
+    wildcards: sample=barcode07
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode12.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode12.fastq/barcode12.fastq_SSP_removed.fastq, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode12.fastq_SSP_removed.log
+    jobid: 173
+    reason: Missing output files: tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode12.fastq_polyA_removed.fastq
+    wildcards: sample=barcode12.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode05_polyA_removed.fastq
+    output: results/pychopper/barcode05/barcode05_SSP_removed.fastq, tmp/read_counts/barcode05/barcode05_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode05_SSP_removed.log
+    jobid: 37
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode05_polyA_removed.fastq
+    wildcards: sample=barcode05
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode04_polyA_removed.fastq
+    output: results/pychopper/barcode04/barcode04_SSP_removed.fastq, tmp/read_counts/barcode04/barcode04_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode04_SSP_removed.log
+    jobid: 49
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode04_polyA_removed.fastq
+    wildcards: sample=barcode04
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode06_polyA_removed.fastq
+    output: results/pychopper/barcode06/barcode06_SSP_removed.fastq, tmp/read_counts/barcode06/barcode06_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode06_SSP_removed.log
+    jobid: 61
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode06_polyA_removed.fastq
+    wildcards: sample=barcode06
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode08.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode08.fastq/barcode08.fastq_SSP_removed.fastq, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode08.fastq_SSP_removed.log
+    jobid: 176
+    reason: Missing output files: tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode08.fastq_polyA_removed.fastq
+    wildcards: sample=barcode08.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode11.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode11.fastq/barcode11.fastq_SSP_removed.fastq, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode11.fastq_SSP_removed.log
+    jobid: 171
+    reason: Missing output files: tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode11.fastq_polyA_removed.fastq
+    wildcards: sample=barcode11.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode06.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode06.fastq/barcode06.fastq_SSP_removed.fastq, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode06.fastq_SSP_removed.log
+    jobid: 181
+    reason: Missing output files: tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode06.fastq_polyA_removed.fastq
+    wildcards: sample=barcode06.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode09_polyA_removed.fastq
+    output: results/pychopper/barcode09/barcode09_SSP_removed.fastq, tmp/read_counts/barcode09/barcode09_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode09_SSP_removed.log
+    jobid: 7
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode09_polyA_removed.fastq
+    wildcards: sample=barcode09
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode13.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode13.fastq/barcode13.fastq_SSP_removed.fastq, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode13.fastq_SSP_removed.log
+    jobid: 174
+    reason: Missing output files: tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode13.fastq_polyA_removed.fastq
+    wildcards: sample=barcode13.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode04.fastq_polyA_removed.fastq
+    output: results/pychopper/barcode04.fastq/barcode04.fastq_SSP_removed.fastq, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode04.fastq_SSP_removed.log
+    jobid: 179
+    reason: Missing output files: tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_SSP_removed.tsv; Input files updated by another job: results/pychopper/polyA_removed/barcode04.fastq_polyA_removed.fastq
+    wildcards: sample=barcode04.fastq
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode13_polyA_removed.fastq
+    output: results/pychopper/barcode13/barcode13_SSP_removed.fastq, tmp/read_counts/barcode13/barcode13_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode13_SSP_removed.log
+    jobid: 19
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode13_polyA_removed.fastq
+    wildcards: sample=barcode13
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule SSP_removal:
+    input: results/pychopper/polyA_removed/barcode08_polyA_removed.fastq
+    output: results/pychopper/barcode08/barcode08_SSP_removed.fastq, tmp/read_counts/barcode08/barcode08_total_reads_SSP_removed.tsv
+    log: logs/logs/barcode08_SSP_removed.log
+    jobid: 31
+    reason: Input files updated by another job: results/pychopper/polyA_removed/barcode08_polyA_removed.fastq
+    wildcards: sample=barcode08
+    resources: tmpdir=/tmp, mem_mb=10240, runtime=60
+
+
+[Mon Oct 28 08:43:32 2024]
+rule merge_read_count:
+    input: tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_SSP_removed.tsv
+    output: results/reports/read_count_overview.tsv
+    log: logs/merge_read_count/merge_read_count.log
+    jobid: 110
+    reason: Missing output files: results/reports/read_count_overview.tsv; Input files updated by another job: tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_prefilt.tsv, tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_polyA.tsv, tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_cDNA.tsv, tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_SSP_removed.tsv, tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_SSP_removed.tsv
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=01:00:00
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode12/barcode12_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode12_genome.sam, results/mapping/genome/barcode12_genome.fastq, tmp/samtools/barcode12.bam, tmp/samtools/barcode12_sorted.bam
+    log: logs/mapping_genome/barcode12.log
+    jobid: 82
+    reason: Input files updated by another job: results/pychopper/barcode12/barcode12_SSP_removed.fastq
+    wildcards: sample=barcode12
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode11/barcode11_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode11_genome.sam, results/mapping/genome/barcode11_genome.fastq, tmp/samtools/barcode11.bam, tmp/samtools/barcode11_sorted.bam
+    log: logs/mapping_genome/barcode11.log
+    jobid: 75
+    reason: Input files updated by another job: results/pychopper/barcode11/barcode11_SSP_removed.fastq
+    wildcards: sample=barcode11
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode07/barcode07_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode07_genome.sam, results/mapping/genome/barcode07_genome.fastq, tmp/samtools/barcode07.bam, tmp/samtools/barcode07_sorted.bam
+    log: logs/mapping_genome/barcode07.log
+    jobid: 88
+    reason: Input files updated by another job: results/pychopper/barcode07/barcode07_SSP_removed.fastq
+    wildcards: sample=barcode07
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode13/barcode13_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode13_genome.sam, results/mapping/genome/barcode13_genome.fastq, tmp/samtools/barcode13.bam, tmp/samtools/barcode13_sorted.bam
+    log: logs/mapping_genome/barcode13.log
+    jobid: 85
+    reason: Input files updated by another job: results/pychopper/barcode13/barcode13_SSP_removed.fastq
+    wildcards: sample=barcode13
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode05/barcode05_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode05_genome.sam, results/mapping/genome/barcode05_genome.fastq, tmp/samtools/barcode05.bam, tmp/samtools/barcode05_sorted.bam
+    log: logs/mapping_genome/barcode05.log
+    jobid: 94
+    reason: Input files updated by another job: results/pychopper/barcode05/barcode05_SSP_removed.fastq
+    wildcards: sample=barcode05
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode08/barcode08_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode08_genome.sam, results/mapping/genome/barcode08_genome.fastq, tmp/samtools/barcode08.bam, tmp/samtools/barcode08_sorted.bam
+    log: logs/mapping_genome/barcode08.log
+    jobid: 91
+    reason: Input files updated by another job: results/pychopper/barcode08/barcode08_SSP_removed.fastq
+    wildcards: sample=barcode08
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode15/barcode15_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode15_genome.sam, results/mapping/genome/barcode15_genome.fastq, tmp/samtools/barcode15.bam, tmp/samtools/barcode15_sorted.bam
+    log: logs/mapping_genome/barcode15.log
+    jobid: 97
+    reason: Input files updated by another job: results/pychopper/barcode15/barcode15_SSP_removed.fastq
+    wildcards: sample=barcode15
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode04/barcode04_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode04_genome.sam, results/mapping/genome/barcode04_genome.fastq, tmp/samtools/barcode04.bam, tmp/samtools/barcode04_sorted.bam
+    log: logs/mapping_genome/barcode04.log
+    jobid: 100
+    reason: Input files updated by another job: results/pychopper/barcode04/barcode04_SSP_removed.fastq
+    wildcards: sample=barcode04
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode10/barcode10_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode10_genome.sam, results/mapping/genome/barcode10_genome.fastq, tmp/samtools/barcode10.bam, tmp/samtools/barcode10_sorted.bam
+    log: logs/mapping_genome/barcode10.log
+    jobid: 103
+    reason: Input files updated by another job: results/pychopper/barcode10/barcode10_SSP_removed.fastq
+    wildcards: sample=barcode10
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode06/barcode06_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode06_genome.sam, results/mapping/genome/barcode06_genome.fastq, tmp/samtools/barcode06.bam, tmp/samtools/barcode06_sorted.bam
+    log: logs/mapping_genome/barcode06.log
+    jobid: 106
+    reason: Input files updated by another job: results/pychopper/barcode06/barcode06_SSP_removed.fastq
+    wildcards: sample=barcode06
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode14/barcode14_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode14_genome.sam, results/mapping/genome/barcode14_genome.fastq, tmp/samtools/barcode14.bam, tmp/samtools/barcode14_sorted.bam
+    log: logs/mapping_genome/barcode14.log
+    jobid: 109
+    reason: Input files updated by another job: results/pychopper/barcode14/barcode14_SSP_removed.fastq
+    wildcards: sample=barcode14
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_genome:
+    input: results/pychopper/barcode09/barcode09_SSP_removed.fastq, .test/references/genomic.fasta
+    output: results/mapping/genome/barcode09_genome.sam, results/mapping/genome/barcode09_genome.fastq, tmp/samtools/barcode09.bam, tmp/samtools/barcode09_sorted.bam
+    log: logs/mapping_genome/barcode09.log
+    jobid: 79
+    reason: Input files updated by another job: results/pychopper/barcode09/barcode09_SSP_removed.fastq
+    wildcards: sample=barcode09
+    resources: tmpdir=/tmp, mem_mb=32768, runtime=1440
+
+Would remove temporary output tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_prefilt.tsv
+Would remove temporary output tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_cDNA.tsv
+Would remove temporary output tmp/read_counts/barcode11.fastq/barcode11.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode09.fastq/barcode09.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode12.fastq/barcode12.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode13.fastq/barcode13.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode07.fastq/barcode07.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode08.fastq/barcode08.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode05.fastq/barcode05.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode15.fastq/barcode15.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode04.fastq/barcode04.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode10.fastq/barcode10.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode06.fastq/barcode06.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/read_counts/barcode14.fastq/barcode14.fastq_total_reads_polyA.tsv
+Would remove temporary output tmp/samtools/barcode12.bam
+Would remove temporary output tmp/samtools/barcode12_sorted.bam
+Would remove temporary output tmp/samtools/barcode11.bam
+Would remove temporary output tmp/samtools/barcode11_sorted.bam
+Would remove temporary output tmp/samtools/barcode07.bam
+Would remove temporary output tmp/samtools/barcode07_sorted.bam
+Would remove temporary output tmp/samtools/barcode13.bam
+Would remove temporary output tmp/samtools/barcode13_sorted.bam
+Would remove temporary output tmp/samtools/barcode05.bam
+Would remove temporary output tmp/samtools/barcode05_sorted.bam
+Would remove temporary output tmp/samtools/barcode08.bam
+Would remove temporary output tmp/samtools/barcode08_sorted.bam
+Would remove temporary output tmp/samtools/barcode15.bam
+Would remove temporary output tmp/samtools/barcode15_sorted.bam
+Would remove temporary output tmp/samtools/barcode04.bam
+Would remove temporary output tmp/samtools/barcode04_sorted.bam
+Would remove temporary output tmp/samtools/barcode10.bam
+Would remove temporary output tmp/samtools/barcode10_sorted.bam
+Would remove temporary output tmp/samtools/barcode06.bam
+Would remove temporary output tmp/samtools/barcode06_sorted.bam
+Would remove temporary output tmp/samtools/barcode14.bam
+Would remove temporary output tmp/samtools/barcode14_sorted.bam
+Would remove temporary output tmp/samtools/barcode09.bam
+Would remove temporary output tmp/samtools/barcode09_sorted.bam
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode09_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode09_transcriptome.sam, results/mapping/transcriptome/barcode09_transcriptome.bam, results/mapping/transcriptome/barcode09_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode09.log
+    jobid: 78
+    reason: Input files updated by another job: results/mapping/genome/barcode09_genome.fastq
+    wildcards: sample=barcode09
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode12_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode12_transcriptome.sam, results/mapping/transcriptome/barcode12_transcriptome.bam, results/mapping/transcriptome/barcode12_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode12.log
+    jobid: 81
+    reason: Input files updated by another job: results/mapping/genome/barcode12_genome.fastq
+    wildcards: sample=barcode12
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode13_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode13_transcriptome.sam, results/mapping/transcriptome/barcode13_transcriptome.bam, results/mapping/transcriptome/barcode13_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode13.log
+    jobid: 84
+    reason: Input files updated by another job: results/mapping/genome/barcode13_genome.fastq
+    wildcards: sample=barcode13
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode11_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode11_transcriptome.sam, results/mapping/transcriptome/barcode11_transcriptome.bam, results/mapping/transcriptome/barcode11_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode11.log
+    jobid: 74
+    reason: Input files updated by another job: results/mapping/genome/barcode11_genome.fastq
+    wildcards: sample=barcode11
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode07_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode07_transcriptome.sam, results/mapping/transcriptome/barcode07_transcriptome.bam, results/mapping/transcriptome/barcode07_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode07.log
+    jobid: 87
+    reason: Input files updated by another job: results/mapping/genome/barcode07_genome.fastq
+    wildcards: sample=barcode07
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode08_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode08_transcriptome.sam, results/mapping/transcriptome/barcode08_transcriptome.bam, results/mapping/transcriptome/barcode08_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode08.log
+    jobid: 90
+    reason: Input files updated by another job: results/mapping/genome/barcode08_genome.fastq
+    wildcards: sample=barcode08
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode06_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode06_transcriptome.sam, results/mapping/transcriptome/barcode06_transcriptome.bam, results/mapping/transcriptome/barcode06_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode06.log
+    jobid: 105
+    reason: Input files updated by another job: results/mapping/genome/barcode06_genome.fastq
+    wildcards: sample=barcode06
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode05_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode05_transcriptome.sam, results/mapping/transcriptome/barcode05_transcriptome.bam, results/mapping/transcriptome/barcode05_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode05.log
+    jobid: 93
+    reason: Input files updated by another job: results/mapping/genome/barcode05_genome.fastq
+    wildcards: sample=barcode05
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode15_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode15_transcriptome.sam, results/mapping/transcriptome/barcode15_transcriptome.bam, results/mapping/transcriptome/barcode15_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode15.log
+    jobid: 96
+    reason: Input files updated by another job: results/mapping/genome/barcode15_genome.fastq
+    wildcards: sample=barcode15
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode04_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode04_transcriptome.sam, results/mapping/transcriptome/barcode04_transcriptome.bam, results/mapping/transcriptome/barcode04_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode04.log
+    jobid: 99
+    reason: Input files updated by another job: results/mapping/genome/barcode04_genome.fastq
+    wildcards: sample=barcode04
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode10_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode10_transcriptome.sam, results/mapping/transcriptome/barcode10_transcriptome.bam, results/mapping/transcriptome/barcode10_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode10.log
+    jobid: 102
+    reason: Input files updated by another job: results/mapping/genome/barcode10_genome.fastq
+    wildcards: sample=barcode10
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule mapping_transcriptome:
+    input: results/mapping/genome/barcode14_genome.fastq, results/transcripts/transcripts.fa
+    output: results/mapping/transcriptome/barcode14_transcriptome.sam, results/mapping/transcriptome/barcode14_transcriptome.bam, results/mapping/transcriptome/barcode14_transcriptome_sorted.bam
+    log: logs/mapping_transcriptome/barcode14.log
+    jobid: 108
+    reason: Input files updated by another job: results/mapping/genome/barcode14_genome.fastq
+    wildcards: sample=barcode14
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode10_transcriptome.bam
+    output: results/quantification/barcode10/barcode10.quant, results/quantification/barcode10/barcode10.infreps.pq
+    log: logs/quantification/barcode10.log
+    jobid: 101
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode10_transcriptome.bam
+    wildcards: sample=barcode10
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode09_transcriptome.bam
+    output: results/quantification/barcode09/barcode09.quant, results/quantification/barcode09/barcode09.infreps.pq
+    log: logs/quantification/barcode09.log
+    jobid: 77
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode09_transcriptome.bam
+    wildcards: sample=barcode09
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode11_transcriptome.bam
+    output: results/quantification/barcode11/barcode11.quant, results/quantification/barcode11/barcode11.infreps.pq
+    log: logs/quantification/barcode11.log
+    jobid: 73
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode11_transcriptome.bam
+    wildcards: sample=barcode11
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode12_transcriptome.bam
+    output: results/quantification/barcode12/barcode12.quant, results/quantification/barcode12/barcode12.infreps.pq
+    log: logs/quantification/barcode12.log
+    jobid: 80
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode12_transcriptome.bam
+    wildcards: sample=barcode12
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode13_transcriptome.bam
+    output: results/quantification/barcode13/barcode13.quant, results/quantification/barcode13/barcode13.infreps.pq
+    log: logs/quantification/barcode13.log
+    jobid: 83
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode13_transcriptome.bam
+    wildcards: sample=barcode13
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode14_transcriptome.bam
+    output: results/quantification/barcode14/barcode14.quant, results/quantification/barcode14/barcode14.infreps.pq
+    log: logs/quantification/barcode14.log
+    jobid: 107
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode14_transcriptome.bam
+    wildcards: sample=barcode14
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode07_transcriptome.bam
+    output: results/quantification/barcode07/barcode07.quant, results/quantification/barcode07/barcode07.infreps.pq
+    log: logs/quantification/barcode07.log
+    jobid: 86
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode07_transcriptome.bam
+    wildcards: sample=barcode07
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode08_transcriptome.bam
+    output: results/quantification/barcode08/barcode08.quant, results/quantification/barcode08/barcode08.infreps.pq
+    log: logs/quantification/barcode08.log
+    jobid: 89
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode08_transcriptome.bam
+    wildcards: sample=barcode08
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode05_transcriptome.bam
+    output: results/quantification/barcode05/barcode05.quant, results/quantification/barcode05/barcode05.infreps.pq
+    log: logs/quantification/barcode05.log
+    jobid: 92
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode05_transcriptome.bam
+    wildcards: sample=barcode05
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode15_transcriptome.bam
+    output: results/quantification/barcode15/barcode15.quant, results/quantification/barcode15/barcode15.infreps.pq
+    log: logs/quantification/barcode15.log
+    jobid: 95
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode15_transcriptome.bam
+    wildcards: sample=barcode15
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode04_transcriptome.bam
+    output: results/quantification/barcode04/barcode04.quant, results/quantification/barcode04/barcode04.infreps.pq
+    log: logs/quantification/barcode04.log
+    jobid: 98
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode04_transcriptome.bam
+    wildcards: sample=barcode04
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule quantification:
+    input: results/mapping/transcriptome/barcode06_transcriptome.bam
+    output: results/quantification/barcode06/barcode06.quant, results/quantification/barcode06/barcode06.infreps.pq
+    log: logs/quantification/barcode06.log
+    jobid: 104
+    reason: Input files updated by another job: results/mapping/transcriptome/barcode06_transcriptome.bam
+    wildcards: sample=barcode06
+    resources: tmpdir=/tmp, mem_mb=20480, runtime=1440
+
+
+[Mon Oct 28 08:43:32 2024]
+rule DESEq2:
+    input: .test/metadata/sample_table.csv, results/quantification/barcode11/barcode11.quant, results/quantification/barcode09/barcode09.quant, results/quantification/barcode12/barcode12.quant, results/quantification/barcode13/barcode13.quant, results/quantification/barcode07/barcode07.quant, results/quantification/barcode08/barcode08.quant, results/quantification/barcode05/barcode05.quant, results/quantification/barcode15/barcode15.quant, results/quantification/barcode04/barcode04.quant, results/quantification/barcode10/barcode10.quant, results/quantification/barcode06/barcode06.quant, results/quantification/barcode14/barcode14.quant
+    output: results/DESeq2/data/DESeq2_results.tsv, results/DESeq2/figs/PCA-plot.png, results/DESeq2/data/DiffExp_all_w_contrast.tsv, results/DESeq2/data/DiffExp_filtered_w_contrast.tsv, results/DESeq2/figs/volcano_plot.png, results/DESeq2/figs/volcano_plot_labels.png
+    log: logs/DESeq2/DESeq2.log
+    jobid: 183
+    reason: Missing output files: results/DESeq2/figs/volcano_plot_labels.png, results/DESeq2/data/DiffExp_all_w_contrast.tsv, results/DESeq2/data/DiffExp_filtered_w_contrast.tsv, results/DESeq2/figs/PCA-plot.png, results/DESeq2/figs/volcano_plot.png, results/DESeq2/data/DESeq2_results.tsv; Input files updated by another job: results/quantification/barcode14/barcode14.quant, results/quantification/barcode10/barcode10.quant, results/quantification/barcode06/barcode06.quant, results/quantification/barcode08/barcode08.quant, results/quantification/barcode12/barcode12.quant, results/quantification/barcode05/barcode05.quant, results/quantification/barcode11/barcode11.quant, results/quantification/barcode13/barcode13.quant, results/quantification/barcode15/barcode15.quant, results/quantification/barcode07/barcode07.quant, results/quantification/barcode04/barcode04.quant, results/quantification/barcode09/barcode09.quant
+    resources: tmpdir=/tmp, mem_mb=16384, runtime=120
+
+[Mon Oct 28 08:43:32 2024]
+rule geneID_product_match:
+    input: results/DESeq2/data/DiffExp_all_w_contrast.tsv, results/DESeq2/data/DiffExp_filtered_w_contrast.tsv
+    output: results/DESeq2/data/DiffExp_all_w_contrast_product.tsv, results/DESeq2/data/DiffExp_filtered_w_contrast_product.tsv
+    log: results/DESeq2/logs/DiffExp_filtered_w_contrast_w_product.log
+    jobid: 184
+    reason: Missing output files: results/DESeq2/data/DiffExp_filtered_w_contrast_product.tsv, results/DESeq2/data/DiffExp_all_w_contrast_product.tsv; Input files updated by another job: results/DESeq2/data/DiffExp_all_w_contrast.tsv, results/DESeq2/data/DiffExp_filtered_w_contrast.tsv
+    resources: tmpdir=/tmp, mem_mb=1024, runtime=60
+
+[Mon Oct 28 08:43:32 2024]
+localrule all:
+    input: results/pychopper/barcode11/barcode11_SSP_removed.fastq, results/pychopper/barcode09/barcode09_SSP_removed.fastq, results/pychopper/barcode12/barcode12_SSP_removed.fastq, results/pychopper/barcode13/barcode13_SSP_removed.fastq, results/pychopper/barcode07/barcode07_SSP_removed.fastq, results/pychopper/barcode08/barcode08_SSP_removed.fastq, results/pychopper/barcode05/barcode05_SSP_removed.fastq, results/pychopper/barcode15/barcode15_SSP_removed.fastq, results/pychopper/barcode04/barcode04_SSP_removed.fastq, results/pychopper/barcode10/barcode10_SSP_removed.fastq, results/pychopper/barcode06/barcode06_SSP_removed.fastq, results/pychopper/barcode14/barcode14_SSP_removed.fastq, results/quantification/barcode11/barcode11.quant, results/quantification/barcode09/barcode09.quant, results/quantification/barcode12/barcode12.quant, results/quantification/barcode13/barcode13.quant, results/quantification/barcode07/barcode07.quant, results/quantification/barcode08/barcode08.quant, results/quantification/barcode05/barcode05.quant, results/quantification/barcode15/barcode15.quant, results/quantification/barcode04/barcode04.quant, results/quantification/barcode10/barcode10.quant, results/quantification/barcode06/barcode06.quant, results/quantification/barcode14/barcode14.quant, results/reports/read_count_overview.tsv, results/DESeq2/data/DESeq2_results.tsv, results/DESeq2/figs/PCA-plot.png, results/DESeq2/data/DiffExp_all_w_contrast.tsv, results/DESeq2/data/DiffExp_filtered_w_contrast.tsv, results/DESeq2/figs/volcano_plot.png, results/DESeq2/figs/volcano_plot_labels.png, results/DESeq2/data/DiffExp_filtered_w_contrast_product.tsv, results/DESeq2/data/DiffExp_all_w_contrast_product.tsv, results/reports/config.txt
+    jobid: 0
+    reason: Input files updated by another job: results/quantification/barcode14/barcode14.quant, results/pychopper/barcode15/barcode15_SSP_removed.fastq, results/quantification/barcode10/barcode10.quant, results/quantification/barcode08/barcode08.quant, results/pychopper/barcode04/barcode04_SSP_removed.fastq, results/pychopper/barcode08/barcode08_SSP_removed.fastq, results/pychopper/barcode11/barcode11_SSP_removed.fastq, results/DESeq2/data/DiffExp_filtered_w_contrast.tsv, results/pychopper/barcode05/barcode05_SSP_removed.fastq, results/pychopper/barcode12/barcode12_SSP_removed.fastq, results/quantification/barcode15/barcode15.quant, results/quantification/barcode13/barcode13.quant, results/pychopper/barcode13/barcode13_SSP_removed.fastq, results/DESeq2/figs/PCA-plot.png, results/DESeq2/figs/volcano_plot.png, results/DESeq2/data/DiffExp_all_w_contrast_product.tsv, results/DESeq2/data/DiffExp_filtered_w_contrast_product.tsv, results/quantification/barcode09/barcode09.quant, results/pychopper/barcode09/barcode09_SSP_removed.fastq, results/reports/read_count_overview.tsv, results/DESeq2/figs/volcano_plot_labels.png, results/quantification/barcode06/barcode06.quant, results/pychopper/barcode07/barcode07_SSP_removed.fastq, results/pychopper/barcode14/barcode14_SSP_removed.fastq, results/quantification/barcode12/barcode12.quant, results/quantification/barcode05/barcode05.quant, results/pychopper/barcode06/barcode06_SSP_removed.fastq, results/pychopper/barcode10/barcode10_SSP_removed.fastq, results/DESeq2/data/DiffExp_all_w_contrast.tsv, results/quantification/barcode11/barcode11.quant, results/quantification/barcode04/barcode04.quant, results/quantification/barcode07/barcode07.quant, results/DESeq2/data/DESeq2_results.tsv
+    resources: tmpdir=/tmp
+
+Job stats:
+job                       count    min threads    max threads
+----------------------  -------  -------------  -------------
+DESEq2                        1              1              1
+SSP_removal                  24              1              1
+all                           1              1              1
+concatenate_fastq            24              1              1
+geneID_product_match          1              1              1
+mapping_genome               12              1              1
+mapping_transcriptome        12              1              1
+merge_cDNA_reads             24              1              1
+merge_read_count              1              1              1
+polyA_removal                24              1              1
+pychopper_first_round        24              1              1
+pychopper_second_round       24              1              1
+quantification               12              1              1
+total                       184              1              1
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        DESEq2, SSP_removal, all, geneID_product_match, mapping_genome, mapping_transcriptome, merge_cDNA_reads, merge_read_count, polyA_removal, pychopper_first_round, pychopper_second_round, quantification
+    missing output files:
+        DESEq2, SSP_removal, concatenate_fastq, geneID_product_match, merge_cDNA_reads, merge_read_count, polyA_removal, pychopper_first_round, pychopper_second_round
+    set of input files has changed since last execution:
+        pychopper_first_round
+Some jobs were triggered by provenance information, see 'reason' section in the rule displays above.
+If you prefer that only modification time is used to determine whether a job shall be executed, use the command line option '--rerun-triggers mtime' (also see --help).
+If you are sure that a change for a certain output file (say, <outfile>) won't change the result (e.g. because you just changed the formatting of a script or environment definition), you can also wipe its metadata to skip such a trigger via 'snakemake --cleanup-metadata <outfile>'. 
+Rules with provenance triggered jobs: pychopper_first_round
+
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.

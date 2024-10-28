@@ -17,7 +17,7 @@ rule TPM:
 rule DESEq2:
     input:
         sample_table = os.path.join(config['metadata']),
-        quant = expand(os.path.join(config['output_dir'], "DESeq2", "{sample}", "{sample}_tpms.quant"),sample=get_samples())
+        quant = expand(os.path.join(config['output_dir'], "quantification", "{sample}", "{sample}.quant"),sample=get_samples())
     output:
         results = os.path.join(config['output_dir'], "DESeq2", "data", "DESeq2_results.tsv"),
         PCA = os.path.join(config['output_dir'], "DESeq2", "figs", "PCA-plot.png"),

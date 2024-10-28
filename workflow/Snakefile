@@ -27,6 +27,7 @@ include: "rules/11_geneID_product_match.smk"
 include: "rules/capture_config.smk"
 include: "rules/common.smk"
 include: "rules/statistics.smk"
+include: "rules/merge_read_count.smk"
 
 # Validate the configuration values
 validate_boolean_config(config["include_pychopper"], "include_pychopper")

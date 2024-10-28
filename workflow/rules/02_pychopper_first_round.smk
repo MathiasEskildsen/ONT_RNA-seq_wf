@@ -1,6 +1,6 @@
 rule pychopper_first_round:
     input:
-        files = os.path.join(config['output_dir'], "samples", "{sample}_concat.fastq")
+        files = os.path.join(config['tmp_dir'], "samples", "{sample}_concat.fastq")
     output:
         report = os.path.join(config['output_dir'], "pychopper", "reports", "{sample}_pychopper1_report.pdf"),
         unclassified = os.path.join(config['output_dir'], "pychopper", "unclassified", "{sample}_unclassified.fastq"),
