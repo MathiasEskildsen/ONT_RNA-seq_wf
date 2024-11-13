@@ -1,5 +1,4 @@
 results/**
-result_nopychop/**
 resources/**
 logs/**
 .snakemake

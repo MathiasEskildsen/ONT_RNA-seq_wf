@@ -3,7 +3,7 @@ rule quantification:
         reads = os.path.join(config['output_dir'], "mapping", "transcriptome", "{sample}_transcriptome.bam")
     output:
         quant = os.path.join(config["output_dir"], "quantification", "{sample}", "{sample}.quant"),
-        inf_rep = os.path.join(config["output_dir"], "quantification", "{sample}", "{sample}.infreps.pq")
+        quant_temp = temp(os.path)
     conda:
         "../envs/gene_abundance_estimation.yml"
     threads:
@@ -17,9 +17,9 @@ rule quantification:
         """
         oarfish \
         -a {input} \
-        -o {output} \
+        -o {output.quant} \
         --threads {threads} \
-        --num-bootstraps 1000 \
+        --num-bootstraps 1000
         #Rename the output file to match expected output
         mv {output.quant}.quant {output.quant}
         """
