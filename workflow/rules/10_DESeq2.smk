@@ -39,6 +39,6 @@ rule DESEq2:
     threads:
         config['max_threads']
     singularity:
-        "workflow/envs/my_deseq2_env_latest.sif"
+        "docker://mathiaseskildsen/my_deseq2_env:latest"
     script:
         "../scripts/DESeq2_norm.R"
