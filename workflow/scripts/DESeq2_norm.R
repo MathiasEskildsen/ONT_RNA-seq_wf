@@ -3,32 +3,33 @@ log <- file(snakemake@log[[1]], open = "wt")
 sink(log)
 sink(log, type="message")
 # List packages required for the analysis
-packages <- c("ggplot2", "readr", "dplyr", "tidyr", "reshape2", "tximport", "tximportData", "DESeq2", "tidyverse", "scales", "BiocGenerics", "ggrepel")
+packages <- c("tidyverse", "DESeq2", "tximport")
 # Check if packages are not installed, if not, then install them
 installed_packages <- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) {
   install.packages(packages[!installed_packages], repos = "https://cloud.r-project.org")
 }
-# Load the required libraries
-invisible(lapply(packages, library, character.only = TRUE))
+# Load the packages
+library(tidyverse)
+library(DESeq2)
+library(tximport)
 
 # Load the sample table into R
 sample_table <- read.csv2(snakemake@input[["sample_table"]])
 colnames(sample_table)[1] <- "sample.name"
+sample_table$sample.name <- as.character(sample_table$sample.name)
 
 #Set the working directory using snakemake config
-output_dir <- snakemake@config[["output_dir"]]
+output_dir <- normalizePath(snakemake@config[["output_dir"]])
 setwd(output_dir)
 
 # Pull the sample names from the sample table
 files <- pull(sample_table, sample.name)
 
 # Construct the sample file paths, using the sample table
-sample_files <- paste0(output_dir, "/quantification", files, "/", (files), ".quant")
+sample_files <- paste0(output_dir, "/quantification/", files, "/", (files), ".quant")
 
 names(sample_files) <- pull(sample_table, sample.name)
-head(sample_files)
-
 # Tximport the data
 count_data <- tximport(files = sample_files,
                        type = "oarfish",
@@ -49,9 +50,16 @@ deseq_norm <- DESeq(deseq_df)
 results_table <- results(deseq_norm)
 # Results in data frame
 results_df <- as.data.frame(results_table)
+# Debugging
 # Write results to file - omit this writing later, just testing atm
-write_tsv(results_df, snakemake@output[["results"]])
-
+data_path <- normalizePath(snakemake@params[["data_path"]], mustWork = FALSE)
+if (!dir.exists(data_path)) {
+    dir.create(data_path, recursive = TRUE)
+}
+print(data_path)
+result_table_path <- paste0(data_path, "/", "DESeq2_results.tsv")
+print(result_table_path)
+write_tsv(results_df, result_table_path)
 ## Variance stabilization of data
 ## This is needed for PCA 
 ## Later add QA plots for now PCA is enough
@@ -65,7 +73,15 @@ PCA_plot <- plotPCA(vsd, intgroup = "condition") +
     ggtitle("PCA plot condition as interesting group") +
     theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold", color = "black"))
 # Save the plot
-ggsave(snakemake@output[["PCA"]], PCA_plot, width = 186, units = "mm")
+# Create file path for PCA plot for ggsave function
+fig_path <- normalizePath(snakemake@params[["fig_path"]], mustWork = FALSE)
+if (!dir.exists(fig_path)) {
+    dir.create(fig_path, recursive = TRUE)
+}
+print(fig_path)
+PCA_plot_file <- paste0(fig_path, "/", "PCA-plot.png")
+print(PCA_plot_file)
+ggsave(PCA_plot_file, PCA_plot, width = 186, units = "mm", create.dir = TRUE)
 # Set up contrasts # This currently only works for 2 conditions, called Control and Treatment
 # Need to make this more general and work for any number of conditions
 TvsC <- results(deseq_norm, contrast=c("condition", "Treatment", "Control"), tidy = T)
@@ -88,8 +104,14 @@ all_contrast_filtered <- do.call("rbind", all_contrast) %>%
 # Filter out non-significant genes
 all_contrast_filtered_list <- filter(all_contrast_filtered,significance != "NO")
 # Write the data to file
-write_tsv(all_contrast_filtered, snakemake@output[["all_w_contrast"]])
-write_tsv(all_contrast_filtered_list, snakemake@output[["filtered_w_contrast"]])
+# Create paths for the files
+
+all_c_f <- paste0(data_path, "/", "DiffExp_all_w_contrast.tsv")
+all_c_f_l <- paste0(data_path, "/", "DiffExp_filtered_w_contrast.tsv")
+print(all_c_f)
+print(all_c_f_l)
+write_tsv(all_contrast_filtered, all_c_f)
+write_tsv(all_contrast_filtered_list, all_c_f_l)
 # Volcano Plot, using semi-standard template
 volcano_plot <- ggplot(data=all_contrast_filtered, aes(x = log2FoldChange, y = -log10(padj), color = significance)) +
   geom_point(size=1,alpha=0.3) + 
@@ -103,7 +125,10 @@ volcano_plot <- ggplot(data=all_contrast_filtered, aes(x = log2FoldChange, y = -
   ggtitle("Volcano plot") +
   theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold", color = "black"))
 # Save the plot
-ggsave(snakemake@output[["volcano"]], volcano_plot, width = 186, units = "mm")
+# Create file path for volcano plot for ggsave function
+volcano_plot_file <- paste0(fig_path, "/", "volcano_plot.png")
+print(volcano_plot_file)
+ggsave(volcano_plot_file, volcano_plot, width = 186, units = "mm",create.dir = TRUE)
 # Add gene-ID labels to existing volcano plot
 # Add labels to top 20 genes in regards to log2FoldChange (10 highest and 10 lowest)
 names(all_contrast_filtered_list)[names(all_contrast_filtered_list) == "row"] <- "gene"
@@ -115,9 +140,10 @@ top_10 <- filtered_df %>% arrange(desc(log2FoldChange)) %>% head(10)
 bottom_10 <- filtered_df %>% arrange(log2FoldChange) %>% head(10)
 # Combine the two
 top_genes <- bind_rows(top_10, bottom_10)
-
-volcanoplot_labels <- volcano_plot +
-  geom_text_repel(data = top_genes, aes(label = gene), show.legend = F)
+## NEED TO ADD ggrepel to docker image for this to work, I'm lazy atm. MDA ffs
+#volcanoplot_labels <- volcano_plot +
+#  geom_text_repel(data = top_genes, aes(label = gene), show.legend = F)
 
 # save the plot
-ggsave(snakemake@output[["volcano_labels"]], volcanoplot_labels, width = 186, units = "mm")
+#volcano_plot_path <- paste0(fig_path, "/", "Volcano_plot_w_labels.png")
+#ggsave(volcano_plot_path, volcanoplot_labels, width = 186, units = "mm",create.dir = TRUE)

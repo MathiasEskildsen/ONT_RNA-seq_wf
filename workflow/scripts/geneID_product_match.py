@@ -1,15 +1,18 @@
 import pandas as pd
+import sys
 
+with open(snakemake.log[0], "w") as f:
+    sys.stderr = sys.stdout = f
 # Read files from snakemake
 input_files = {
-    "all": snakemake.input.all_w_contrast,
-    "filtered": snakemake.input.filtered_w_contrast
+    "all": snakemake.input.sig_genes_no_filt,
+    "filtered": snakemake.input.sig_genes_w_filt
 }
 output_files = {
-    "all": snakemake.output.all_w_contrast_product,
-    "filtered": snakemake.output.filtered_w_contrast_product
+    "all": snakemake.output.sig_genes_no_filt_prod,
+    "filtered": snakemake.output.sig_genes_w_filt_prod
 }
-gff_file = snakemake.params.annotation
+gff_file = snakemake.params.reference
 
 # Create a mapping dictionary for product information
 product_mapping = {}

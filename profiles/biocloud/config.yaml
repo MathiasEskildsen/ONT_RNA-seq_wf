@@ -22,7 +22,7 @@ default-resources:
 #before submitting to SLURM and leave threads settings elsewhere untouched
 max-threads: 32
 use-conda: True
-use-singularity: False
+use-singularity: True
 conda-frontend: mamba
 printshellcmds: False
 jobs: 50

@@ -24,7 +24,7 @@ rule DESEq2:
         all_w_contrast = os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_all_w_contrast.tsv"),
         filtered_w_contrast = os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_filtered_w_contrast.tsv"),
         volcano = os.path.join(config['output_dir'], "DESeq2", "figs", "volcano_plot.png"),
-        volcano_labels = os.path.join(config['output_dir'], "DESeq2", "figs", "volcano_plot_labels.png"),
+        #volcano_labels = os.path.join(config['output_dir'], "DESeq2", "figs", "volcano_plot_labels.png"),
     log:
         os.path.join(config['log_dir'], "DESeq2", "DESeq2.log")
     resources:
@@ -33,10 +33,12 @@ rule DESEq2:
     params:
         padj = config['padj_cutoff'],
         log2fc = config['log2fc_cutoff'],
-        tpm_path = os.path.join(config['output_dir'], "DESeq2") 
+        tpm_path = os.path.join(config['output_dir'], "DESeq2"),
+        fig_path = "DESeq2/figs",
+        data_path = "DESeq2/data"
     threads:
         config['max_threads']
-    conda:
-        "../envs/DESeq2.yml"
+    singularity:
+        "workflow/envs/my_deseq2_env_latest.sif"
     script:
         "../scripts/DESeq2_norm.R"

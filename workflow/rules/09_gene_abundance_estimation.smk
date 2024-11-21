@@ -3,7 +3,7 @@ rule quantification:
         reads = os.path.join(config['output_dir'], "mapping", "transcriptome", "{sample}_transcriptome.bam")
     output:
         quant = os.path.join(config["output_dir"], "quantification", "{sample}", "{sample}.quant"),
-        quant_temp = temp(os.path)
+        infreps=os.path.join(config["output_dir"], "quantification", "{sample}", "{sample}.infreps.pq")
     conda:
         "../envs/gene_abundance_estimation.yml"
     threads:
@@ -22,4 +22,5 @@ rule quantification:
         --num-bootstraps 1000
         #Rename the output file to match expected output
         mv {output.quant}.quant {output.quant}
+        mv {output.quant}.infreps.pq {output.infreps}
         """
