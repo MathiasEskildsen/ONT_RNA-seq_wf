@@ -38,7 +38,7 @@ rule DESEq2:
         data_path = "DESeq2/data"
     threads:
         config['max_threads']
-    singularity:
+    container:
         "docker://mathiaseskildsen/my_deseq2_env:latest"
     script:
         "../scripts/DESeq2_norm.R"
