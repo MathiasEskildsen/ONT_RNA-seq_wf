@@ -6,3 +6,4 @@ dependencies:
  - snakemake=7.18.2
  - snakefmt # snakemake code formatter
  - graphviz=9.0.0 # to visualize the DAG
+ - apptainer=1.3.2 # used for container in DESeq2 env
