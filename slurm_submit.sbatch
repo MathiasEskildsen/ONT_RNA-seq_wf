@@ -1,6 +1,6 @@
 #!/usr/bin/bash -l
-#SBATCH --job-name=RNA-Seq_wf_test
-#SBATCH --output=/home/bio.aau.dk/mk20aj/joblog/job_%j_%x.out
+#SBATCH --job-name=RNA-Seq_wf_madhuni_01
+#SBATCH --output=job_%j_%x.out
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=1
@@ -8,8 +8,8 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=1G
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=mhes@bio.aau.dk
-#SBATCH --time 2-00:00:00
+#SBATCH --mail-user=abc@bio.aau.dk
+#SBATCH --time 4-00:00:00
 
 # Exit on first error and if any variables are unset
 set -eu
@@ -27,4 +27,4 @@ snakemake --dag | dot -Tpdf > dag.pdf
 snakemake --profile profiles/biocloud
 
 # Generate a report once finished (optional)
-#snakemake --report results/report.html
+snakemake --report results/report.html

@@ -84,30 +84,70 @@ print(PCA_plot_file)
 ggsave(PCA_plot_file, PCA_plot, width = 186, units = "mm", create.dir = TRUE)
 # Set up contrasts # This currently only works for 2 conditions, called Control and Treatment
 # Need to make this more general and work for any number of conditions
-TvsC <- results(deseq_norm, contrast=c("condition", "Treatment", "Control"), tidy = T)
-contrast_list <- list(TvsC)
-contrast_names <- c("Treatment vs Control")
+#TvsC <- results(deseq_norm, contrast=c("condition", "Treatment", "Control"), tidy = T)
+#contrast_list <- list(TvsC)
+#contrast_names <- c("Treatment vs Control")
 
-all_contrast <- map2(contrast_list, contrast_names, function(x, name) {
-  x %>% 
-    mutate(contrast = name) %>% as_tibble()
-})
+#all_contrast <- map2(contrast_list, contrast_names, function(x, name) {
+#  x %>% 
+#    mutate(contrast = name) %>% as_tibble()
+#})
+
+# Extract unique conditions from the sample table
+conditions <- unique(sample_table$condition)
+# Debugging
+print(conditions)
+# Generate pair-wise contrasts for all conditions
+contrast_combinations <- combn(conditions, 2, simplify = FALSE)
+# Debugging
+print(contrast_combinations)
+# Initialize lists to store contrasts and their names
+contrast_list <- list()
+contrast_names <- c()
+
+# Loop through each pair of conditions and compute contrasts
+for (contrast_pair in contrast_combinations) {
+  # Name for the contrast
+  contrast_name <- paste(contrast_pair[2], "vs", contrast_pair[1])
+  
+  # Calculate the contrast results
+  contrast_result <- results(deseq_norm, contrast = c("condition", contrast_pair[2], contrast_pair[1]), tidy = TRUE)
+  
+  # Ensure the result is a tibble
+  contrast_result <- as_tibble(as.data.frame(contrast_result))
+  
+  # Append the contrast result and name to respective lists
+  contrast_list <- append(contrast_list, list(contrast_result))
+  contrast_names <- append(contrast_names, contrast_name)
+}
+
+# Debugging
+print(contrast_list)
+print(contrast_names)
+# Combine all contrast results into a single tibble
+all_contrast <- map2(contrast_list, contrast_names, function(contrast_data, name) {
+  contrast_data %>%
+    mutate(contrast = name) %>%
+    as_tibble()
+}) %>% bind_rows()
 
 # Add significance of regulation to each gene
-all_contrast_filtered <- do.call("rbind", all_contrast) %>%  
-  mutate(significance = case_when(padj > snakemake@params[["padj"]] ~ "NO",
-                                  log2FoldChange > snakemake@params[["log2fc"]] & padj < snakemake@params[["padj"]] ~ "UP",
-                                  log2FoldChange < -snakemake@params[["log2fc"]] & padj < snakemake@params[["padj"]] ~ "DOWN",
-                                  log2FoldChange < snakemake@params[["log2fc"]] & padj < snakemake@params[["padj"]] & log2FoldChange > -snakemake@params[["log2fc"]] ~ "NO")) %>%
-  filter(padj!="") %>%
+all_contrast_filtered <- all_contrast %>%
+  mutate(significance = case_when(
+    padj > snakemake@params[["padj"]] ~ "NO",
+    log2FoldChange > snakemake@params[["log2fc"]] & padj < snakemake@params[["padj"]] ~ "UP",
+    log2FoldChange < -snakemake@params[["log2fc"]] & padj < snakemake@params[["padj"]] ~ "DOWN",
+    log2FoldChange < snakemake@params[["log2fc"]] & padj < snakemake@params[["padj"]] & log2FoldChange > -snakemake@params[["log2fc"]] ~ "NO"
+  )) %>%
+  filter(padj != "") %>%  # Exclude rows where padj is NA
   as_tibble()
 # Filter out non-significant genes
 all_contrast_filtered_list <- filter(all_contrast_filtered,significance != "NO")
 # Write the data to file
 # Create paths for the files
-
 all_c_f <- paste0(data_path, "/", "DiffExp_all_w_contrast.tsv")
 all_c_f_l <- paste0(data_path, "/", "DiffExp_filtered_w_contrast.tsv")
+# Debugging
 print(all_c_f)
 print(all_c_f_l)
 write_tsv(all_contrast_filtered, all_c_f)

@@ -7,3 +7,5 @@ data/**
 tmp/**
 data/samples/**
 data/reference/**
+results_Madhuni/**
+logs_madhuni/**
