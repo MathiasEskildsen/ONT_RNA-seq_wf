@@ -8,7 +8,8 @@ ONT_RNA-seq_wf is a Snakemake workflow designed to process RNA-seq data generate
 This workflow is still a work in progress and is actively developed with new features being continously implemented.
 
 ## Table of Contents
-
+- [Requirements](#requirements)
+- [Usage](#usage)
 
 ## Requirements
 All required tools are automatically installed by Snakemake using conda environments or singularity/apptainer containers, however Snakemake itself needs to be installed first. Load a software module with Snakemake, use a native install, or use the `environment.yml` file to create a conda environment for this particular project using fx `mamba env create -n snakemake -f environment.yml`.
