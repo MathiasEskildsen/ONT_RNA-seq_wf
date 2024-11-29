@@ -5,11 +5,11 @@
 output_dir: "results"
 
 # Paths to relevant references. Annotation file and genome file (optional rRNA database)
-genome_path: ".test/references/genomic.fasta"
-annotation_path: ".test/references/annotation.gff"
+genome_path: "references/genomic.fasta"
+annotation_path: "references/annotation.gff"
 # Configurations for the DESeq2 workflow
 # Sample table for DESeq2 workflow (description of samples, conditions, etc. names should match the name of the folders in the input_dir or filenames in the input_dir) 
-metadata: ".test/metadata/sample_table.csv" 
+metadata: "metadata/sample_table.csv" 
 padj_cutoff: 0.05
 log2fc_cutoff: 0.585
 
