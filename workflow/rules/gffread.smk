@@ -8,7 +8,7 @@ rule gffread:
         1
     resources:
         mem_mb = 1024, # 1GB
-        runtime = "01:00:00"
+        runtime = 60
     conda:
         "../envs/gffread.yml"
     log:
