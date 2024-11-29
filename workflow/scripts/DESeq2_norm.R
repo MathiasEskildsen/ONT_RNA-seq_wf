@@ -187,3 +187,5 @@ top_genes <- bind_rows(top_10, bottom_10)
 # save the plot
 #volcano_plot_path <- paste0(fig_path, "/", "Volcano_plot_w_labels.png")
 #ggsave(volcano_plot_path, volcanoplot_labels, width = 186, units = "mm",create.dir = TRUE)
+
+save.image(snakemake@output[["r_env"]])

@@ -12,6 +12,10 @@ rule merge_cDNA_reads:
     resources:
         mem_mb = 1024,
         runtime = 60
+    log:
+        os.path.join(config['log_dir'], "pychopper", "merge_cDNA_reads", "{sample}", "{sample}.log")
+    conda:
+        "../envs/generic.yml"
     shell:
         """
         cat {input.full_length1} {input.full_length2} {input.rescued1} {input.rescued2} > {output.merged_fastq}
