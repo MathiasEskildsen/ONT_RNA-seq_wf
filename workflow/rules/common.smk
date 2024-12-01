@@ -64,7 +64,7 @@ def prepare_inputs():
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_filtered_w_contrast_product.tsv")))
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_all_w_contrast_product.tsv")))
         inputs.extend(expand(os.path.join(config['output_dir'], "reports", "config.txt")))
-        inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "R_env.RData")))
+        #inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "R_env.RData")))
     else:
         inputs.extend(expand(os.path.join(config['output_dir'], "quantification", "{sample}", "{sample}.quant"), sample=get_samples()))
         #inputs.extend(expand(os.path.join(config['output_dir'], "reports", "read_count_overview.tsv")))
@@ -77,5 +77,5 @@ def prepare_inputs():
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_filtered_w_contrast_product.tsv")))
         inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "DiffExp_all_w_contrast_product.tsv")))
         inputs.extend(expand(os.path.join(config['output_dir'], "reports", "config.txt")))
-        inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "R_env.RData")))
+        #inputs.extend(expand(os.path.join(config['output_dir'], "DESeq2", "data", "R_env.RData")))
     return inputs
