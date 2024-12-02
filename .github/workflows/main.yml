@@ -44,4 +44,4 @@ jobs:
       with:
         directory: .test
         snakefile: workflow/Snakefile
-        args: "--use-conda --show-failed-logs --cores 3 --conda-cleanup-pkgs cache --all-temp"
+        args: "--use-conda --use-singularity --show-failed-logs --cores 3 --conda-cleanup-pkgs cache --all-temp"
